@@ -18,7 +18,7 @@ public class BibliotecaAppTest {
     public void testShouldPrintWelcomeMessageOnConsole() {
         String expectedOutput = "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!\n" ;
 
-        BibliotecaApp bibliotecaApp = new BibliotecaApp(new PrintStream(outContent), Collections.emptyList());
+        new BibliotecaApp(new PrintStream(outContent), Collections.emptyList());
 
         assertEquals(expectedOutput, outContent.toString());
     }
@@ -29,7 +29,8 @@ public class BibliotecaAppTest {
         List<String> bookList = Arrays.asList("Pride and Prejudice", "The Diary of Anne Frank", "To Kill a Mockingbird", "Little Women");
         for (String book : bookList)
             expectedOutput.append(book).append("\n");
-        BibliotecaApp bibliotecaApp = new BibliotecaApp(new PrintStream(outContent), bookList);
+
+        new BibliotecaApp(new PrintStream(outContent), bookList);
 
         assertEquals(expectedOutput.toString(), outContent.toString());
     }
