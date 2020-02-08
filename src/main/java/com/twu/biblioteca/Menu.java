@@ -9,6 +9,25 @@ public class Menu {
     }
 
     public void displayMenu() {
-        library.displayBookList();
+        int option = 1;
+        if(isValidOption(option))
+            performMenuAction(option);
+    }
+
+    protected boolean isValidOption(int option) {
+        if(option == 1)
+            return true;
+        notifyCustomer();
+        return false;
+    }
+
+    private void notifyCustomer() {
+        System.out.println("Please select a valid option!");
+    }
+
+    public void performMenuAction(int option) {
+        if (option == 1) {
+            library.displayBookList();
+        }
     }
 }
