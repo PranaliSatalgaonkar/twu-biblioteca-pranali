@@ -22,6 +22,6 @@ public class BibliotecaApp {
 
     void showBookList() {
         for (Book book : bookList)
-            printStream.println(book.title + " " + book.author + " " + book.publicationYear);
+            printStream.println(book.getBookDetails());
     }
 }

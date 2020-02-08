@@ -28,7 +28,7 @@ public class BibliotecaAppTest {
         StringBuilder expectedOutput = new StringBuilder("Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!\n");
         List<Book> bookList = Arrays.asList(new Book("Pride and Prejudice", "Jane Austen", 1813), new Book("The Diary of a Young Girl", "Anne Frank", 1947), new Book("To Kill a Mockingbird", "Harper Lee", 1960), new Book("Little Women", "Louisa May Alcott", 1868));
         for (Book book : bookList)
-            expectedOutput.append(book.title + " " + book.author + " " + book.publicationYear).append("\n");
+            expectedOutput.append(book.title).append(" ").append(book.author).append(" ").append(book.publicationYear).append("\n");
 
         new BibliotecaApp(new PrintStream(outContent), bookList);
 
