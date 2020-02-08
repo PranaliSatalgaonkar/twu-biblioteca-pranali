@@ -28,17 +28,18 @@ public class BibliotecaAppTest {
     public void testShouldPrintWelcomeMessageOnConsole() {
         String expectedOutput = "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!\nPride and Prejudice Jane Austen 1813\nThe Diary of a Young Girl Anne Frank 1947\nTo Kill a Mockingbird Harper Lee 1960\nLittle Women Louisa May Alcott 1868\n" ;
 
-        new BibliotecaApp(new Library());
+        new BibliotecaApp(new Menu(), new Library());
 
         assertEquals(expectedOutput, outContent.toString());
     }
 
     @Test
-    public void testShouldEnlistAllLibraryBooks() {
+    public void testShouldDisplayMenuOnStartingApplication() {
+        Menu menu = mock(Menu.class);
         Library library = mock(Library.class);
 
-        new BibliotecaApp(library);
+        new BibliotecaApp(menu, library);
 
-        verify(library, times(1)).displayBookList();
+        verify(menu, times(1)).displayMenu(library);
     }
 }

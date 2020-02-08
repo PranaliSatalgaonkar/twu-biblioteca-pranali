@@ -2,9 +2,9 @@ package com.twu.biblioteca;
 
 public class BibliotecaApp {
 
-    public BibliotecaApp(Library library) {
+    public BibliotecaApp(Menu menu, Library library) {
         displayWelcomeMessage();
-        library.displayBookList();
+        menu.displayMenu(library);
     }
 
     void displayWelcomeMessage() {
