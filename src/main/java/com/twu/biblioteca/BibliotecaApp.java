@@ -6,9 +6,9 @@ import java.util.List;
 public class BibliotecaApp {
 
     PrintStream printStream;
-    List<String> bookList;
+    List<Book> bookList;
 
-    public BibliotecaApp(PrintStream printStream, List<String> bookList) {
+    public BibliotecaApp(PrintStream printStream, List<Book> bookList) {
         this.printStream = printStream;
         this.bookList = bookList;
 
@@ -21,7 +21,7 @@ public class BibliotecaApp {
     }
 
     void showBookList() {
-        for (String book : bookList)
-            printStream.println(book);
+        for (Book book : bookList)
+            printStream.println(book.title + " " + book.author + " " + book.publicationYear);
     }
 }
