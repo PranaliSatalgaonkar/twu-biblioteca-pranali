@@ -28,7 +28,7 @@ public class BibliotecaAppTest {
     public void testShouldPrintWelcomeMessageOnConsole() {
         String expectedOutput = "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!\nPride and Prejudice Jane Austen 1813\nThe Diary of a Young Girl Anne Frank 1947\nTo Kill a Mockingbird Harper Lee 1960\nLittle Women Louisa May Alcott 1868\n" ;
 
-        new BibliotecaApp(new Menu(), new Library());
+        new BibliotecaApp(new Menu(new Library()));
 
         assertEquals(expectedOutput, outContent.toString());
     }
@@ -36,10 +36,9 @@ public class BibliotecaAppTest {
     @Test
     public void testShouldDisplayMenuOnStartingApplication() {
         Menu menu = mock(Menu.class);
-        Library library = mock(Library.class);
 
-        new BibliotecaApp(menu, library);
+        new BibliotecaApp(menu);
 
-        verify(menu, times(1)).displayMenu(library);
+        verify(menu, times(1)).displayMenu();
     }
 }

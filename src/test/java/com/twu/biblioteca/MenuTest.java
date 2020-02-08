@@ -9,9 +9,9 @@ class MenuTest {
     @Test
     public void testShouldCallMenu() {
         Library library = mock(Library.class);
-        Menu menu = new Menu();
+        Menu menu = new Menu(library);
 
-        menu.displayMenu(library);
+        menu.displayMenu();
 
         verify(library, times(1)).displayBookList();
     }
