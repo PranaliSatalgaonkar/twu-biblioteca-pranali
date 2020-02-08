@@ -13,7 +13,7 @@ public class Library {
                 new Book("Little Women", "Louisa May Alcott", 1868));
     }
 
-    void showBookList() {
+    void displayBookList() {
         for (Book book : bookList)
             System.out.println(book.getBookDetails());
     }

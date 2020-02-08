@@ -28,7 +28,7 @@ class LibraryTest {
         Library library = new Library();
         String expectedOutput = "Pride and Prejudice Jane Austen 1813\nThe Diary of a Young Girl Anne Frank 1947\nTo Kill a Mockingbird Harper Lee 1960\nLittle Women Louisa May Alcott 1868\n" ;
 
-        library.showBookList();
+        library.displayBookList();
 
         assertEquals(expectedOutput, outContent.toString());
     }

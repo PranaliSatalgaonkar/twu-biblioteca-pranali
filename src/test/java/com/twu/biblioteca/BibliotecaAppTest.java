@@ -37,8 +37,8 @@ public class BibliotecaAppTest {
     public void testShouldEnlistAllLibraryBooks() {
         Library library = mock(Library.class);
 
-        new BibliotecaApp(mock(Library.class));
+        new BibliotecaApp(library);
 
-        verify(library, times(1)).showBookList();
+        verify(library, times(1)).displayBookList();
     }
 }
