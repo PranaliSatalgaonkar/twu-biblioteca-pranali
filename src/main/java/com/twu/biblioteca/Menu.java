@@ -10,12 +10,12 @@ public class Menu {
 
     public void displayMenu() {
         int option = 1;
-        if(isValidOption(option))
+        if (isValidOption(option))
             performMenuAction(option);
     }
 
     protected boolean isValidOption(int option) {
-        if(option == 1)
+        if (option == 1)
             return true;
         notifyCustomer();
         return false;
@@ -28,6 +28,9 @@ public class Menu {
     public void performMenuAction(int option) {
         if (option == 1) {
             library.displayBookList();
+        }
+        if (option == 2) {
+            library.checkOut("Pride and Prejudice");
         }
     }
 }

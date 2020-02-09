@@ -35,11 +35,18 @@ class MenuTest {
     }
 
     @Test
-    void testShouldNotifyOnChoosingInvalidOption() {
+    public void testShouldNotifyOnChoosingInvalidOption() {
         Menu menu = new Menu(new Library());
-        String expectedOutput = "Please select a valid option!\n";
+        String expectedOutput = "Please select a valid option!\n" ;
 
         assertFalse(menu.isValidOption(0));
         assertEquals(expectedOutput, outContent.toString());
+    }
+
+    @Test
+    public void testShouldCheckoutABook() {
+        Menu menu = new Menu(new Library());
+        menu.performMenuAction(2);
+
     }
 }
