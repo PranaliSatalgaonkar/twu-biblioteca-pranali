@@ -52,4 +52,14 @@ class LibraryTest {
 
         assertEquals(expectedOutput, outContent.toString());
     }
+
+    @Test
+    public void testShouldNotifyOnUnsuccessfulCheckout() throws BookNotFoundException {
+        Library library = new Library();
+        String expectedOutput="Sorry, that book is not available\n";
+
+        library.checkOut("The Alchemist");
+
+        assertEquals(expectedOutput, outContent.toString());
+    }
 }

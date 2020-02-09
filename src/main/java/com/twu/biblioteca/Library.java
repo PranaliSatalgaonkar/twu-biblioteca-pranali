@@ -21,9 +21,13 @@ public class Library {
     }
 
     public void checkOut(String title) throws BookNotFoundException {
-        Book book = getBook(title);
-        bookList.remove(book);
-        System.out.println("Thank you! Enjoy the book");
+        try {
+            Book book = getBook(title);
+            bookList.remove(book);
+            System.out.println("Thank you! Enjoy the book");
+        } catch (BookNotFoundException bookNotFoundException) {
+            System.out.println("Sorry, that book is not available");
+        }
     }
 
     private Book getBook(String title) throws BookNotFoundException {
