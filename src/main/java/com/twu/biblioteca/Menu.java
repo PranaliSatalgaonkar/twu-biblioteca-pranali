@@ -15,7 +15,7 @@ public class Menu {
     }
 
     protected boolean isValidOption(int option) {
-        if (option == 1)
+        if (option > 0 && option < 5)
             return true;
         notifyCustomer();
         return false;
