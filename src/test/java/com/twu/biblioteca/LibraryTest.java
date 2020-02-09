@@ -66,10 +66,20 @@ class LibraryTest {
     @Test
     public void testShouldReturnABook() {
         Library library = new Library();
-        String expectedOutput = "Pride and Prejudice Jane Austen 1813\nThe Diary of a Young Girl Anne Frank 1947\nTo Kill a Mockingbird Harper Lee 1960\nLittle Women Louisa May Alcott 1868\nThe Alchemist Paulo Coelho 1988\n" ;
+        String expectedOutput = "Thank you for returning the book\nPride and Prejudice Jane Austen 1813\nThe Diary of a Young Girl Anne Frank 1947\nTo Kill a Mockingbird Harper Lee 1960\nLittle Women Louisa May Alcott 1868\nThe Alchemist Paulo Coelho 1988\n" ;
 
         library.returnBook(new Book("The Alchemist", "Paulo Coelho", 1988));
         library.displayBookList();
+
+        assertEquals(expectedOutput, outContent.toString());
+    }
+
+    @Test
+    public void testShouldNotifyOnSuccessfulReturn() {
+        Library library = new Library();
+        String expectedOutput = "Thank you for returning the book\n" ;
+
+        library.returnBook(new Book("The Alchemist", "Paulo Coelho", 1988));
 
         assertEquals(expectedOutput, outContent.toString());
     }

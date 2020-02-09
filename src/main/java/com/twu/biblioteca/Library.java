@@ -40,5 +40,6 @@ public class Library {
 
     public void returnBook(Book book) {
         bookList.add(book);
+        System.out.println("Thank you for returning the book");
     }
 }
