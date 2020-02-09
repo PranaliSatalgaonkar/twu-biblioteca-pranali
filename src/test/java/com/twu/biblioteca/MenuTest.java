@@ -43,13 +43,4 @@ class MenuTest {
         assertFalse(menu.isValidOption(0));
         assertEquals(expectedOutput, outContent.toString());
     }
-
-    @Test
-    public void testShouldCheckoutABook() throws BookNotFoundException {
-        Menu menu = new Menu(new Library());
-
-        menu.performMenuAction(2);
-
-        assertThrows(BookNotFoundException.class, ()-> menu.performMenuAction(2));
-    }
 }

@@ -32,7 +32,7 @@ public class Menu {
             library.displayBookList();
         }
         if (option == 2) {
-            library.checkOut("Pride and Prejudice");
+            library.checkOut("");
         }
     }
 }

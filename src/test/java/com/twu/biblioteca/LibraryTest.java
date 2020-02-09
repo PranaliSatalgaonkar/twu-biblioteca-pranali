@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.exceptions.BookNotFoundException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -31,5 +32,14 @@ class LibraryTest {
         library.displayBookList();
 
         assertEquals(expectedOutput, outContent.toString());
+    }
+
+    @Test
+    public void testShouldCheckoutABook() throws BookNotFoundException {
+        Library library = new Library();
+
+        library.checkOut("Pride and Prejudice");
+
+        assertThrows(BookNotFoundException.class, ()-> library.checkOut("Pride and Prejudice"));
     }
 }
