@@ -36,7 +36,7 @@ class MenuTest {
 
     @Test
     public void testShouldNotifyOnChoosingInvalidOption() {
-        Menu menu = new Menu(new Library());
+        Menu menu = new Menu(mock(Library.class));
         String expectedOutput = "Please select a valid option!\n" ;
 
         assertFalse(menu.isValidOption(0));
@@ -45,7 +45,7 @@ class MenuTest {
 
     @Test
     public void testShouldCheckoutABook() {
-        Menu menu = new Menu(new Library());
+        Menu menu = new Menu(mock(Library.class));
         menu.performMenuAction(2);
 
     }
