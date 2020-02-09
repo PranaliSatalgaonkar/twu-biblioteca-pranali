@@ -38,7 +38,7 @@ class LibraryTest {
     public void testShouldCheckoutABook() {
         Library library = new Library();
 
-        library.checkOut("Pride and Prejudice");
+        library.checkoutBook("Pride and Prejudice");
 
         assertThrows(BookNotFoundException.class, () -> library.getBook("Pride and Prejudice"));
     }
@@ -48,7 +48,7 @@ class LibraryTest {
         Library library = new Library();
         String expectedOutput = "Thank you! Enjoy the book\n" ;
 
-        library.checkOut("The Diary of a Young Girl");
+        library.checkoutBook("The Diary of a Young Girl");
 
         assertEquals(expectedOutput, outContent.toString());
     }
@@ -58,7 +58,7 @@ class LibraryTest {
         Library library = new Library();
         String expectedOutput = "Sorry, that book is not available\n" ;
 
-        library.checkOut("The Alchemist");
+        library.checkoutBook("The Alchemist");
 
         assertEquals(expectedOutput, outContent.toString());
     }

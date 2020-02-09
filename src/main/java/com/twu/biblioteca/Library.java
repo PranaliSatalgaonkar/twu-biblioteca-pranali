@@ -20,7 +20,7 @@ public class Library {
             System.out.println(book.getBookDetails());
     }
 
-    public void checkOut(String title) {
+    public void checkoutBook(String title) {
         try {
             Book book = getBook(title);
             bookList.remove(book);

@@ -30,7 +30,7 @@ public class Menu {
             library.displayBookList();
         }
         if (option == 2) {
-            library.checkOut("");
+            library.checkoutBook("");
         }
     }
 }
