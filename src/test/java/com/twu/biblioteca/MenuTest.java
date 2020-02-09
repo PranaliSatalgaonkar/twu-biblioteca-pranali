@@ -1,6 +1,5 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.exceptions.BookNotFoundException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -26,7 +25,7 @@ class MenuTest {
     }
 
     @Test
-    public void testShouldCallMenu() throws BookNotFoundException {
+    public void testShouldCallMenu() {
         Library library = mock(Library.class);
         Menu menu = new Menu(library);
 

@@ -20,7 +20,7 @@ public class Library {
             System.out.println(book.getBookDetails());
     }
 
-    public void checkOut(String title) throws BookNotFoundException {
+    public void checkOut(String title) {
         try {
             Book book = getBook(title);
             bookList.remove(book);

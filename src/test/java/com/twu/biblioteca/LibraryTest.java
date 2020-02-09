@@ -35,18 +35,18 @@ class LibraryTest {
     }
 
     @Test
-    public void testShouldCheckoutABook() throws BookNotFoundException {
+    public void testShouldCheckoutABook() {
         Library library = new Library();
 
         library.checkOut("Pride and Prejudice");
 
-        assertThrows(BookNotFoundException.class, ()-> library.checkOut("Pride and Prejudice"));
+        assertThrows(BookNotFoundException.class, () -> library.checkOut("Pride and Prejudice"));
     }
 
     @Test
-    public void testShouldNotifyOnSuccessfulCheckout() throws BookNotFoundException {
+    public void testShouldNotifyOnSuccessfulCheckout() {
         Library library = new Library();
-        String expectedOutput="Thank you! Enjoy the book\n";
+        String expectedOutput = "Thank you! Enjoy the book\n" ;
 
         library.checkOut("The Diary of a Young Girl");
 
@@ -54,9 +54,9 @@ class LibraryTest {
     }
 
     @Test
-    public void testShouldNotifyOnUnsuccessfulCheckout() throws BookNotFoundException {
+    public void testShouldNotifyOnUnsuccessfulCheckout() {
         Library library = new Library();
-        String expectedOutput="Sorry, that book is not available\n";
+        String expectedOutput = "Sorry, that book is not available\n" ;
 
         library.checkOut("The Alchemist");
 
