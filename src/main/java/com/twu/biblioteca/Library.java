@@ -37,4 +37,8 @@ public class Library {
         }
         throw new BookNotFoundException();
     }
+
+    public void returnBook(Book book) {
+        bookList.add(book);
+    }
 }

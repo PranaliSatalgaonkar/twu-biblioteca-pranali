@@ -62,4 +62,15 @@ class LibraryTest {
 
         assertEquals(expectedOutput, outContent.toString());
     }
+
+    @Test
+    public void testShouldReturnABook() {
+        Library library = new Library();
+        String expectedOutput = "Pride and Prejudice Jane Austen 1813\nThe Diary of a Young Girl Anne Frank 1947\nTo Kill a Mockingbird Harper Lee 1960\nLittle Women Louisa May Alcott 1868\nThe Alchemist Paulo Coelho 1988\n" ;
+
+        library.returnBook(new Book("The Alchemist", "Paulo Coelho", 1988));
+        library.displayBookList();
+
+        assertEquals(expectedOutput, outContent.toString());
+    }
 }
