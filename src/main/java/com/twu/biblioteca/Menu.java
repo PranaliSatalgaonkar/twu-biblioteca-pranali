@@ -34,10 +34,16 @@ public class Menu {
             library.displayBookList();
         }
         if (option == 2) {
-            library.checkoutBook("");
+            Scanner scanner = new Scanner(System.in);
+            String bookTitle = scanner.nextLine();
+            library.checkoutBook(bookTitle);
         }
         if (option == 3) {
-            library.returnBook(new Book("", "", 0));
+            Scanner scanner = new Scanner(System.in);
+            String bookTitle = scanner.nextLine();
+            String bookAuthor= scanner.nextLine();
+            int bookPublicationYear = scanner.nextInt();
+            library.returnBook(new Book(bookTitle, bookAuthor, bookPublicationYear));
         }
         if (option == 4) {
             return;
