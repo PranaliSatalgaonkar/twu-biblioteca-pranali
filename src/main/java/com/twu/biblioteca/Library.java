@@ -39,11 +39,17 @@ public class Library {
     }
 
     public void returnBook(Book book) {
+        if (isValidBook(book)) {
+            bookList.add(book);
+            System.out.println("Thank you for returning the book");
+        }
+    }
+
+    private boolean isValidBook(Book book) {
         if (book.title.equals("Alchemist")) {
             System.out.println("That is not a valid book to return");
-            return;
+            return false;
         }
-        bookList.add(book);
-        System.out.println("Thank you for returning the book");
+        return true;
     }
 }
