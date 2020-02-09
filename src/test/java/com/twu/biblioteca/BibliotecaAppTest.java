@@ -27,7 +27,8 @@ public class BibliotecaAppTest {
 
     @Test
     public void testShouldPrintWelcomeMessageOnConsole() {
-        String expectedOutput = "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!\n" ;
+        String expectedOutput = "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!\n\nMENU:\n\n1. Display books in library.\n2. Checkout Book.\n3. Return Book.\n4. Quit Application.\n\nEnter your choice: " ;
+
         String input = "4" ;
         System.setIn(new ByteArrayInputStream(input.getBytes()));
 
