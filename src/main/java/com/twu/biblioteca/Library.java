@@ -19,15 +19,14 @@ public class Library {
     }
 
     public void checkOut(String title) {
-        int index = getIndexOf(title);
-        bookList.remove(index);
+        bookList.remove(getBook(title));
     }
 
-    private int getIndexOf(String title) {
+    private Book getBook(String title) {
         for (Book book : bookList) {
             if (book.title.equals(title))
-                return bookList.indexOf(book);
+                return book;
         }
-        return -1;
+        return null;
     }
 }
