@@ -7,8 +7,10 @@ import java.util.Arrays;
 
 public class Library {
     ArrayList<Book> bookList;
+    Inventory inventory;
 
     public Library() {
+        inventory = new Inventory();
         bookList = new ArrayList<>(Arrays.asList(new Book("Pride and Prejudice", "Jane Austen", 1813),
                 new Book("The Diary of a Young Girl", "Anne Frank", 1947),
                 new Book("To Kill a Mockingbird", "Harper Lee", 1960),
@@ -46,7 +48,7 @@ public class Library {
     }
 
     private boolean isValidBook(Book book) {
-        if (book.title.equals("Alchemist")) {
+        if (!inventory.isInInventory(book)) {
             System.out.println("That is not a valid book to return");
             return false;
         }
