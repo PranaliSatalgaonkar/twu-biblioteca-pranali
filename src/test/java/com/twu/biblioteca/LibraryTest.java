@@ -27,7 +27,7 @@ class LibraryTest {
     @Test
     public void testShouldDisplayBookList() {
         Library library = new Library();
-        String expectedOutput = "Pride and Prejudice Jane Austen 1813\nThe Diary of a Young Girl Anne Frank 1947\nTo Kill a Mockingbird Harper Lee 1960\nLittle Women Louisa May Alcott 1868\n" ;
+        String expectedOutput = "Pride and Prejudice Jane Austen 1813\nThe Diary of a Young Girl Anne Frank 1947\nTo Kill a Mockingbird Harper Lee 1960\nLittle Women Louisa May Alcott 1868\nThe Alchemist Paulo Coelho 1988\n";
 
         library.displayBookList();
 
@@ -58,7 +58,7 @@ class LibraryTest {
         Library library = new Library();
         String expectedOutput = "Sorry, that book is not available\n" ;
 
-        library.checkoutBook("The Alchemist");
+        library.checkoutBook("Secret Seven");
 
         assertEquals(expectedOutput, outContent.toString());
     }
@@ -66,7 +66,7 @@ class LibraryTest {
     @Test
     public void testShouldReturnABook() {
         Library library = new Library();
-        String expectedOutput = "Thank you for returning the book\nPride and Prejudice Jane Austen 1813\nThe Diary of a Young Girl Anne Frank 1947\nTo Kill a Mockingbird Harper Lee 1960\nLittle Women Louisa May Alcott 1868\nThe Alchemist Paulo Coelho 1988\n" ;
+        String expectedOutput = "Thank you for returning the book\nPride and Prejudice Jane Austen 1813\nThe Diary of a Young Girl Anne Frank 1947\nTo Kill a Mockingbird Harper Lee 1960\nLittle Women Louisa May Alcott 1868\nThe Alchemist Paulo Coelho 1988\nThe Alchemist Paulo Coelho 1988\n" ;
 
         library.returnBook(new Book("The Alchemist", "Paulo Coelho", 1988));
         library.displayBookList();

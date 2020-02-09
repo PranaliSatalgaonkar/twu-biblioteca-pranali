@@ -35,5 +35,8 @@ public class Menu {
         if (option == 3) {
             library.returnBook(new Book("", "", 0));
         }
+        if (option == 4) {
+            return;
+        }
     }
 }
