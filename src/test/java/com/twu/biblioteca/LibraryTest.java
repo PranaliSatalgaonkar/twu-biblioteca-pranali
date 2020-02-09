@@ -42,4 +42,14 @@ class LibraryTest {
 
         assertThrows(BookNotFoundException.class, ()-> library.checkOut("Pride and Prejudice"));
     }
+
+    @Test
+    public void testShouldNotifyOnSuccessfulCheckout() throws BookNotFoundException {
+        Library library = new Library();
+        String expectedOutput="Thank you! Enjoy the book\n";
+
+        library.checkOut("The Diary of a Young Girl");
+
+        assertEquals(expectedOutput, outContent.toString());
+    }
 }

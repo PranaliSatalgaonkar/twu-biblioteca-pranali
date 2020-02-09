@@ -23,7 +23,7 @@ public class Library {
     public void checkOut(String title) throws BookNotFoundException {
         Book book = getBook(title);
         bookList.remove(book);
-        displayBookList();
+        System.out.println("Thank you! Enjoy the book");
     }
 
     private Book getBook(String title) throws BookNotFoundException {
