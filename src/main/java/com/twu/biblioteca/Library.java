@@ -30,7 +30,7 @@ public class Library {
         }
     }
 
-    private Book getBook(String title) throws BookNotFoundException {
+    protected Book getBook(String title) throws BookNotFoundException {
         for (Book book : bookList) {
             if (book.title.equals(title))
                 return book;

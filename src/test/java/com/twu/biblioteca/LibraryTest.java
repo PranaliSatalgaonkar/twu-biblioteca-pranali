@@ -40,7 +40,7 @@ class LibraryTest {
 
         library.checkOut("Pride and Prejudice");
 
-        assertThrows(BookNotFoundException.class, () -> library.checkOut("Pride and Prejudice"));
+        assertThrows(BookNotFoundException.class, () -> library.getBook("Pride and Prejudice"));
     }
 
     @Test
