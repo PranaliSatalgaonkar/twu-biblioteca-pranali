@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.exceptions.BookNotFoundException;
+
 public class Menu {
 
     private final Library library;
@@ -8,7 +10,7 @@ public class Menu {
         this.library = library;
     }
 
-    public void displayMenu() {
+    public void displayMenu() throws BookNotFoundException {
         int option = 1;
         if (isValidOption(option))
             performMenuAction(option);
@@ -25,7 +27,7 @@ public class Menu {
         System.out.println("Please select a valid option!");
     }
 
-    public void performMenuAction(int option) {
+    public void performMenuAction(int option) throws BookNotFoundException {
         if (option == 1) {
             library.displayBookList();
         }

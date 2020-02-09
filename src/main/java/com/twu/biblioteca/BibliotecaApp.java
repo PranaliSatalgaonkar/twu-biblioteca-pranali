@@ -1,8 +1,10 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.exceptions.BookNotFoundException;
+
 public class BibliotecaApp {
 
-    public BibliotecaApp(Menu menu) {
+    public BibliotecaApp(Menu menu) throws BookNotFoundException {
         displayWelcomeMessage();
         menu.displayMenu();
     }

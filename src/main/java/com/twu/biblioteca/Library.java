@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.exceptions.BookNotFoundException;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -18,15 +20,17 @@ public class Library {
             System.out.println(book.getBookDetails());
     }
 
-    public void checkOut(String title) {
-        bookList.remove(getBook(title));
+    public void checkOut(String title) throws BookNotFoundException {
+        Book book = getBook(title);
+        bookList.remove(book);
+        displayBookList();
     }
 
-    private Book getBook(String title) {
+    private Book getBook(String title) throws BookNotFoundException {
         for (Book book : bookList) {
             if (book.title.equals(title))
                 return book;
         }
-        return null;
+        throw new BookNotFoundException();
     }
 }
