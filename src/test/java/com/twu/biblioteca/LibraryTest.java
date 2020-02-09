@@ -83,4 +83,14 @@ class LibraryTest {
 
         assertEquals(expectedOutput, outContent.toString());
     }
+
+    @Test
+    public void testShouldNotifyOnUnsuccessfulReturn() {
+        Library library = new Library();
+        String expectedOutput = "That is not a valid book to return\n" ;
+
+        library.returnBook(new Book("Alchemist", "Paulo Coelho", 1988));
+
+        assertEquals(expectedOutput, outContent.toString());
+    }
 }
