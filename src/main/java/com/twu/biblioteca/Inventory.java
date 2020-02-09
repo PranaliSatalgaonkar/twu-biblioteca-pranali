@@ -14,7 +14,7 @@ public class Inventory {
                 new Book("The Alchemist", "Paulo Coelho", 1988)));
     }
 
-    public boolean isInInventory(Book book){
+    public boolean isInInventory(Book book) {
         return inventoryBookList.contains(book);
     }
 }

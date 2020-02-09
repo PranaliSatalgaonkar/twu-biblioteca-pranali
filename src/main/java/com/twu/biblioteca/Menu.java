@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import java.util.Scanner;
+
 public class Menu {
 
     private final Library library;
@@ -9,7 +11,9 @@ public class Menu {
     }
 
     public void displayMenu() {
-        int option = 1;
+        Scanner scanner = new Scanner(System.in);
+        int option = scanner.nextInt();
+
         if (isValidOption(option))
             performMenuAction(option);
     }

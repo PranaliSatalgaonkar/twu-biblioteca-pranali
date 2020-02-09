@@ -27,7 +27,7 @@ class LibraryTest {
     @Test
     public void testShouldDisplayBookList() {
         Library library = new Library();
-        String expectedOutput = "Pride and Prejudice Jane Austen 1813\nThe Diary of a Young Girl Anne Frank 1947\nTo Kill a Mockingbird Harper Lee 1960\nLittle Women Louisa May Alcott 1868\nThe Alchemist Paulo Coelho 1988\n";
+        String expectedOutput = "Pride and Prejudice Jane Austen 1813\nThe Diary of a Young Girl Anne Frank 1947\nTo Kill a Mockingbird Harper Lee 1960\nLittle Women Louisa May Alcott 1868\nThe Alchemist Paulo Coelho 1988\n" ;
 
         library.displayBookList();
 
