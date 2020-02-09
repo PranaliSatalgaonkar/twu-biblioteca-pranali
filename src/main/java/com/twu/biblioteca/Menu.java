@@ -32,5 +32,8 @@ public class Menu {
         if (option == 2) {
             library.checkoutBook("");
         }
+        if (option == 3) {
+            library.returnBook(new Book("", "", 0));
+        }
     }
 }
