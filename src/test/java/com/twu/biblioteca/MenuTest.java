@@ -45,9 +45,10 @@ class MenuTest {
         Scanner scanner = new Scanner(System.in);
         Menu menu = new Menu(mock(Library.class));
         String expectedOutput = "Please select a valid option!\n" ;
-        int sc = scanner.nextInt();
+        int option = scanner.nextInt();
 
-        assertFalse(menu.isValidOption(sc));
+        menu.performMenuAction(option);
+
         assertEquals(expectedOutput, outContent.toString());
         System.setIn(System.in);
     }

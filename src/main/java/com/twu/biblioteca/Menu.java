@@ -15,43 +15,35 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
 
-        if (isValidOption(option))
-            performMenuAction(option);
-    }
-
-    protected boolean isValidOption(int option) {
-        if (option > 0 && option < 5)
-            return true;
-        notifyCustomer();
-        return false;
-    }
-
-    private void notifyCustomer() {
-        System.out.println("Please select a valid option!");
+        performMenuAction(option);
     }
 
     public void performMenuAction(int option) {
-        if (option == 1) {
-            library.displayBookList();
-        }
-        if (option == 2) {
-            System.out.println("Enter title of the book: ");
-            Scanner scanner = new Scanner(System.in);
-            String bookTitle = scanner.nextLine();
-            library.checkoutBook(bookTitle);
-        }
-        if (option == 3) {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter title of the book : ");
-            String bookTitle = scanner.nextLine();
-            System.out.println("Enter author : ");
-            String bookAuthor = scanner.nextLine();
-            System.out.println("Enter publication year : ");
-            int bookPublicationYear = scanner.nextInt();
-            library.returnBook(new Book(bookTitle, bookAuthor, bookPublicationYear));
-        }
-        if (option == 4) {
-            return;
+        Scanner scanner = new Scanner(System.in);
+        String bookTitle;
+
+        switch (option) {
+            case 1:
+                library.displayBookList();
+                break;
+            case 2:
+                System.out.println("Enter title of the book: ");
+                bookTitle = scanner.nextLine();
+                library.checkoutBook(bookTitle);
+                break;
+            case 3:
+                System.out.println("Enter title of the book : ");
+                bookTitle = scanner.nextLine();
+                System.out.println("Enter author : ");
+                String bookAuthor = scanner.nextLine();
+                System.out.println("Enter publication year : ");
+                int bookPublicationYear = scanner.nextInt();
+                library.returnBook(new Book(bookTitle, bookAuthor, bookPublicationYear));
+                break;
+            case 4:
+                return;
+            default:
+                System.out.println("Please select a valid option!");
         }
     }
 }
