@@ -23,12 +23,12 @@ public class Menu {
 
         switch (option) { // TODO: can this be cleaner ?
             case 1:
-                library.displayBookList();
+                library.displayList();
                 break;
             case 2:
                 System.out.println("Enter title of the book: ");
                 bookTitle = inputScanner.scanBookTitle();
-                library.checkoutBook(bookTitle);
+                library.checkout(bookTitle);
                 break;
             case 3:
                 System.out.println("Enter title of the book : ");

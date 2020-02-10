@@ -18,12 +18,12 @@ public class Library {
                 new Book("The Alchemist", "Paulo Coelho", 1988)));
     }
 
-    public void displayBookList() { //TODO: book
+    public void displayList() {
         for (Book book : bookList)
             System.out.println(book.getDetails());
     }
 
-    public void checkoutBook(String title) {
+    public void checkout(String title) {
         Book book = getBook(title);
         if (book == null)
             System.out.println("Sorry, that book is not available"); // TODO: is this srp

@@ -28,7 +28,7 @@ class LibraryTest {
         Library library = new Library();
         String expectedOutput = "Pride and Prejudice Jane Austen 1813\nThe Diary of a Young Girl Anne Frank 1947\nTo Kill a Mockingbird Harper Lee 1960\nLittle Women Louisa May Alcott 1868\nThe Alchemist Paulo Coelho 1988\n" ;
 
-        library.displayBookList();
+        library.displayList();
 
         assertEquals(expectedOutput, outContent.toString());
     }
@@ -38,8 +38,8 @@ class LibraryTest {
         Library library = new Library();
         String expectedOutput = "Thank you! Enjoy the book\nSorry, that book is not available\n" ;
 
-        library.checkoutBook("Pride and Prejudice");
-        library.checkoutBook("Pride and Prejudice");
+        library.checkout("Pride and Prejudice");
+        library.checkout("Pride and Prejudice");
 
         assertEquals(expectedOutput, outContent.toString());
     }
@@ -49,7 +49,7 @@ class LibraryTest {
         Library library = new Library();
         String expectedOutput = "Thank you! Enjoy the book\n" ;
 
-        library.checkoutBook("The Diary of a Young Girl");
+        library.checkout("The Diary of a Young Girl");
 
         assertEquals(expectedOutput, outContent.toString());
     }
@@ -59,7 +59,7 @@ class LibraryTest {
         Library library = new Library();
         String expectedOutput = "Sorry, that book is not available\n" ;
 
-        library.checkoutBook("Secret Seven");
+        library.checkout("Secret Seven");
 
         assertEquals(expectedOutput, outContent.toString());
     }
@@ -70,7 +70,7 @@ class LibraryTest {
         String expectedOutput = "Thank you for returning the book\nPride and Prejudice Jane Austen 1813\nThe Diary of a Young Girl Anne Frank 1947\nTo Kill a Mockingbird Harper Lee 1960\nLittle Women Louisa May Alcott 1868\nThe Alchemist Paulo Coelho 1988\nThe Alchemist Paulo Coelho 1988\n" ;
 
         library.returnBook(new Book("The Alchemist", "Paulo Coelho", 1988));
-        library.displayBookList();
+        library.displayList();
 
         assertEquals(expectedOutput, outContent.toString());
     }
