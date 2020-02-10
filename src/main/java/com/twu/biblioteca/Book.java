@@ -2,7 +2,6 @@ package com.twu.biblioteca;
 
 import java.util.Objects;
 
-//TODO: why no test ?
 public class Book {
     protected final String title;
     protected final String author;
