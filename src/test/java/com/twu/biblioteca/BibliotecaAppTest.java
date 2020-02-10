@@ -28,10 +28,10 @@ public class BibliotecaAppTest {
     public void testShouldPrintWelcomeMessageOnConsole() {
         String expectedOutput = "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!\n\nMENU:\n\n1. Display books in library.\n2. Checkout Book.\n3. Return Book.\n4. Quit Application.\n\nEnter your choice : \n" ;
 
-        InputScanner inputScanner = mock(InputScanner.class);
-        doReturn(4).when(inputScanner).scanOption();
+        ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
+        doReturn(4).when(consoleSimulator).scanOption();
 
-        new BibliotecaApp(new Menu(new Library(), inputScanner));
+        new BibliotecaApp(new Menu(new Library(), consoleSimulator));
 
         assertEquals(expectedOutput, outContent.toString());
     }

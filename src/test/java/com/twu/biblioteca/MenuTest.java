@@ -27,9 +27,9 @@ class MenuTest {
     @Test
     public void testShouldCallMenu() {
         Library library = mock(Library.class);
-        InputScanner inputScanner = mock(InputScanner.class);
-        Menu menu = new Menu(library, inputScanner);
-        when(inputScanner.scanOption()).thenReturn(1);
+        ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
+        Menu menu = new Menu(library, consoleSimulator);
+        when(consoleSimulator.scanOption()).thenReturn(1);
 
         menu.display();
 
@@ -38,11 +38,11 @@ class MenuTest {
 
     @Test
     public void testShouldNotifyOnChoosingInvalidOption() {
-        InputScanner inputScanner = mock(InputScanner.class);
-        Menu menu = new Menu(mock(Library.class), inputScanner);
+        ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
+        Menu menu = new Menu(mock(Library.class), consoleSimulator);
         String expectedOutput = "Please select a valid option!\n" ;
-        when(inputScanner.scanOption()).thenReturn(5);
-        int option = inputScanner.scanOption();
+        when(consoleSimulator.scanOption()).thenReturn(5);
+        int option = consoleSimulator.scanOption();
 
         menu.performAction(option);
 

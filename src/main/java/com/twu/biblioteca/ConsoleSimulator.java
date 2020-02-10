@@ -3,7 +3,7 @@ package com.twu.biblioteca;
 import java.util.Scanner;
 
 //TODO: tests
-public class InputScanner {
+public class ConsoleSimulator {
     private Scanner scanner = new Scanner(System.in);
 
     public int scanOption() {
