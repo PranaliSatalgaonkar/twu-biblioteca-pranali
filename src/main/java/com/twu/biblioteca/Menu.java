@@ -2,7 +2,6 @@ package com.twu.biblioteca;
 
 
 public class Menu {
-
     private final Library library;
     private InputScanner inputScanner;
 
@@ -16,16 +15,6 @@ public class Menu {
         int option = inputScanner.scanOption();
 
         performAction(option);
-    }
-
-    private Book getBookDetails() {
-        System.out.println("Enter title of the book: ");
-        String bookTitle = inputScanner.scanBookTitle();
-        System.out.println("Enter author : ");
-        String bookAuthor = inputScanner.scanBookAuthor();
-        System.out.println("Enter publication year : ");
-        int bookPublicationYear = inputScanner.scanBookPublicationYear();
-        return new Book(bookTitle, bookAuthor, bookPublicationYear);
     }
 
     public void performAction(int option) {
@@ -46,4 +35,15 @@ public class Menu {
                 System.out.println("Please select a valid option!");
         }
     }
+
+    private Book getBookDetails() {
+        System.out.println("Enter title of the book: ");
+        String bookTitle = inputScanner.scanBookTitle();
+        System.out.println("Enter author : ");
+        String bookAuthor = inputScanner.scanBookAuthor();
+        System.out.println("Enter publication year : ");
+        int bookPublicationYear = inputScanner.scanBookPublicationYear();
+        return new Book(bookTitle, bookAuthor, bookPublicationYear);
+    }
+
 }

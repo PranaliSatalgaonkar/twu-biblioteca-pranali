@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Library {
-    //TODO : structure, d, c, p , a, internal apis
     private List<Book> bookList;
     private Inventory inventory;
 
@@ -31,15 +30,15 @@ public class Library {
             System.out.println("Sorry, that book is not available"); // TODO: is this srp
     }
 
-    private boolean isInLibrary(Book book) {
-        return bookList.contains(book);
-    }
-
     public void returnBook(Book book) {
         if (isValidBook(book)) {
             bookList.add(book);
             System.out.println("Thank you for returning the book");  // TODO: is this srp
         }
+    }
+
+    private boolean isInLibrary(Book book) {
+        return bookList.contains(book);
     }
 
     private boolean isValidBook(Book book) {
