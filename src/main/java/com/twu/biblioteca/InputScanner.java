@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 //TODO: tests
 public class InputScanner {
-    Scanner scanner = new Scanner(System.in);//TODO: private
+    private Scanner scanner = new Scanner(System.in);
 
     public int scanOption() {
         return scanner.nextInt();
