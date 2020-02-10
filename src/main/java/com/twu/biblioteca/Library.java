@@ -2,10 +2,12 @@ package com.twu.biblioteca;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Library {
-    ArrayList<Book> bookList;
-    Inventory inventory;
+    //TODO : structure, d, c, p , a, internal apis
+    List<Book> bookList; //TODO: private
+    Inventory inventory; //TODO: private
 
     public Library() {
         inventory = new Inventory();
@@ -16,7 +18,7 @@ public class Library {
                 new Book("The Alchemist", "Paulo Coelho", 1988)));
     }
 
-    void displayBookList() {
+    public void displayBookList() { //TODO: book
         for (Book book : bookList)
             System.out.println(book.getBookDetails());
     }
@@ -24,26 +26,26 @@ public class Library {
     public void checkoutBook(String title) {
         Book book = getBook(title);
         if (book == null)
-            System.out.println("Sorry, that book is not available");
+            System.out.println("Sorry, that book is not available"); // TODO: is this srp
         else {
             bookList.remove(book);
-            System.out.println("Thank you! Enjoy the book");
+            System.out.println("Thank you! Enjoy the book");  // TODO: is this srp
         }
-    }
-
-    protected Book getBook(String title) {
-        for (Book book : bookList) {
-            if (book.title.equals(title))
-                return book;
-        }
-        return null;
     }
 
     public void returnBook(Book book) {
         if (isValidBook(book)) {
             bookList.add(book);
-            System.out.println("Thank you for returning the book");
+            System.out.println("Thank you for returning the book");  // TODO: is this srp
         }
+    }
+
+    protected Book getBook(String title) { //TODO: private
+        for (Book book : bookList) {
+            if (book.title.equals(title)) // TODO: compare books instead of title
+                return book;
+        }
+        return null;
     }
 
     private boolean isValidBook(Book book) {

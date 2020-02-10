@@ -4,7 +4,7 @@ package com.twu.biblioteca;
 public class Menu {
 
     private final Library library;
-    private final InputScanner inputScanner;
+    private InputScanner inputScanner;
 
     public Menu(Library library, InputScanner inputScanner) {
         this.library = library;
@@ -14,14 +14,15 @@ public class Menu {
     public void displayMenu() {
         System.out.println("\nMENU:\n\n1. Display books in library.\n2. Checkout Book.\n3. Return Book.\n4. Quit Application.\n\nEnter your choice : ");
         int option = inputScanner.scanOption();
+//        System.out.println(option);
 
         performMenuAction(option);
-    }
+    } //TODO: display
 
     public void performMenuAction(int option) {
         String bookTitle;
 
-        switch (option) {
+        switch (option) { // TODO: can this be cleaner ?
             case 1:
                 library.displayBookList();
                 break;
@@ -41,8 +42,9 @@ public class Menu {
                 break;
             case 4:
                 return;
+//                System.exit(1);
             default:
                 System.out.println("Please select a valid option!");
         }
-    }
+    } // TODO: name performAction
 }

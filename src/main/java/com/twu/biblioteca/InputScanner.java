@@ -2,15 +2,15 @@ package com.twu.biblioteca;
 
 import java.util.Scanner;
 
+//TODO: tests
 public class InputScanner {
+    Scanner scanner = new Scanner(System.in);//TODO: private
 
-    Scanner scanner = new Scanner(System.in);
-
-    public int scanOption(){
+    public int scanOption() {
         return scanner.nextInt();
     }
 
-    public String scanBookTitle(){
+    public String scanBookTitle() {
         return scanner.nextLine();
     }
 
