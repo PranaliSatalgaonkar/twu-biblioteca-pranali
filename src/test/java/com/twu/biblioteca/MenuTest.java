@@ -4,10 +4,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -29,9 +27,9 @@ class MenuTest {
     @Test
     public void testShouldCallMenu() {
         Library library = mock(Library.class);
-        Menu menu = new Menu(library);
-        String input = "1" ;
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        InputScanner inputScanner = mock(InputScanner.class);
+        Menu menu = new Menu(library, inputScanner);
+        when(inputScanner.scanOption()).thenReturn(1);
 
         menu.displayMenu();
 
@@ -40,12 +38,11 @@ class MenuTest {
 
     @Test
     public void testShouldNotifyOnChoosingInvalidOption() {
-        String input = "5" ;
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        Scanner scanner = new Scanner(System.in);
-        Menu menu = new Menu(mock(Library.class));
+        InputScanner inputScanner = mock(InputScanner.class);
+        Menu menu = new Menu(mock(Library.class), inputScanner);
         String expectedOutput = "Please select a valid option!\n" ;
-        int option = scanner.nextInt();
+        when(inputScanner.scanOption()).thenReturn(5);
+        int option = inputScanner.scanOption();
 
         menu.performMenuAction(option);
 

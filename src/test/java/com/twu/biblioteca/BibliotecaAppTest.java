@@ -32,7 +32,7 @@ public class BibliotecaAppTest {
         String input = "4" ;
         System.setIn(new ByteArrayInputStream(input.getBytes()));
 
-        new BibliotecaApp(new Menu(new Library()));
+        new BibliotecaApp(new Menu(new Library(), new InputScanner()));
 
         assertEquals(expectedOutput, outContent.toString());
     }

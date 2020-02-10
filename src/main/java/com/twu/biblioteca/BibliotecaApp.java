@@ -3,7 +3,7 @@ package com.twu.biblioteca;
 public class BibliotecaApp {
 
     public static void main(String[] args) {
-        new BibliotecaApp(new Menu(new Library()));
+        new BibliotecaApp(new Menu(new Library(), new InputScanner()));
     }
 
     public BibliotecaApp(Menu menu) {
