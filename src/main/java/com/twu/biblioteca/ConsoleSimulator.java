@@ -21,4 +21,8 @@ public class ConsoleSimulator {
     public int scanBookPublicationYear() {
         return scanner.nextInt();
     }
+
+    public void display(String message){
+        System.out.println(message);
+    }
 }

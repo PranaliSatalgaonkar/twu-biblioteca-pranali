@@ -25,7 +25,7 @@ class LibraryTest {
 
     @Test
     public void testShouldDisplayBookList() {
-        Library library = new Library();
+        Library library = new Library(new ConsoleSimulator());
         String expectedOutput = "Pride and Prejudice Jane Austen 1813\nThe Diary of a Young Girl Anne Frank 1947\nTo Kill a Mockingbird Harper Lee 1960\nLittle Women Louisa May Alcott 1868\nThe Alchemist Paulo Coelho 1988\n" ;
 
         library.displayList();
@@ -35,7 +35,7 @@ class LibraryTest {
 
     @Test
     public void testShouldCheckoutABook() {
-        Library library = new Library();
+        Library library = new Library(new ConsoleSimulator());
         String expectedOutput = "Thank you! Enjoy the book\nSorry, that book is not available\n" ;
 
         library.checkout(new Book("Pride and Prejudice", "Jane Austen", 1813));
@@ -46,7 +46,7 @@ class LibraryTest {
 
     @Test
     public void testShouldNotifyOnSuccessfulCheckout() {
-        Library library = new Library();
+        Library library = new Library(new ConsoleSimulator());
         String expectedOutput = "Thank you! Enjoy the book\n" ;
 
         library.checkout(new Book("The Diary of a Young Girl", "Anne Frank", 1947));
@@ -56,7 +56,7 @@ class LibraryTest {
 
     @Test
     public void testShouldNotifyOnUnsuccessfulCheckout() {
-        Library library = new Library();
+        Library library = new Library(new ConsoleSimulator());
         String expectedOutput = "Sorry, that book is not available\n" ;
 
         library.checkout(new Book("The Secret Seven", "Enid Blyton", 1949));
@@ -66,7 +66,7 @@ class LibraryTest {
 
     @Test
     public void testShouldReturnABook() {
-        Library library = new Library();
+        Library library = new Library(new ConsoleSimulator());
         String expectedOutput = "Thank you for returning the book\nPride and Prejudice Jane Austen 1813\nThe Diary of a Young Girl Anne Frank 1947\nTo Kill a Mockingbird Harper Lee 1960\nLittle Women Louisa May Alcott 1868\nThe Alchemist Paulo Coelho 1988\nThe Alchemist Paulo Coelho 1988\n" ;
 
         library.returnBook(new Book("The Alchemist", "Paulo Coelho", 1988));
@@ -77,7 +77,7 @@ class LibraryTest {
 
     @Test
     public void testShouldNotifyOnSuccessfulReturn() {
-        Library library = new Library();
+        Library library = new Library(new ConsoleSimulator());
         String expectedOutput = "Thank you for returning the book\n" ;
 
         library.returnBook(new Book("The Alchemist", "Paulo Coelho", 1988));
@@ -87,7 +87,7 @@ class LibraryTest {
 
     @Test
     public void testShouldNotifyOnUnsuccessfulReturn() {
-        Library library = new Library();
+        Library library = new Library(new ConsoleSimulator());
         String expectedOutput = "That is not a valid book to return\n" ;
 
         library.returnBook(new Book("Alchemist", "Paulo Coelho", 1988));

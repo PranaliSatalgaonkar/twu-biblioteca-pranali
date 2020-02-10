@@ -7,8 +7,10 @@ import java.util.List;
 public class Library {
     private List<Book> bookList;
     private Inventory inventory;
+    private ConsoleSimulator consoleSimulator;
 
-    public Library() {
+    public Library(ConsoleSimulator consoleSimulator) {
+        this.consoleSimulator = consoleSimulator;
         inventory = new Inventory();
         bookList = new ArrayList<>(Arrays.asList(new Book("Pride and Prejudice", "Jane Austen", 1813),
                 new Book("The Diary of a Young Girl", "Anne Frank", 1947),
@@ -19,21 +21,21 @@ public class Library {
 
     public void displayList() {
         for (Book book : bookList)
-            System.out.println(book.getDetails());
+            consoleSimulator.display(book.getDetails());
     }
 
     public void checkout(Book book) {
         if (isInLibrary(book)) {
             bookList.remove(book);
-            System.out.println("Thank you! Enjoy the book");  // TODO: is this srp
+            consoleSimulator.display("Thank you! Enjoy the book");  // TODO: is this srp
         } else
-            System.out.println("Sorry, that book is not available"); // TODO: is this srp
+            consoleSimulator.display("Sorry, that book is not available"); // TODO: is this srp
     }
 
     public void returnBook(Book book) {
         if (isBelongingToLibrary(book)) {
             bookList.add(book);
-            System.out.println("Thank you for returning the book");  // TODO: is this srp
+            consoleSimulator.display("Thank you for returning the book");  // TODO: is this srp
         }
     }
 
@@ -43,7 +45,7 @@ public class Library {
 
     private boolean isBelongingToLibrary(Book book) {
         if (!inventory.isInInventory(book)) {
-            System.out.println("That is not a valid book to return");
+            consoleSimulator.display("That is not a valid book to return");
             return false;
         }
         return true;

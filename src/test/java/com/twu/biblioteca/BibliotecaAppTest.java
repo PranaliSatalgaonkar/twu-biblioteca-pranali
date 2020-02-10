@@ -31,7 +31,7 @@ public class BibliotecaAppTest {
         ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
         doReturn(4).when(consoleSimulator).scanOption();
 
-        new BibliotecaApp(new Menu(new Library(), consoleSimulator));
+        new BibliotecaApp(new Menu(new Library(consoleSimulator), consoleSimulator), consoleSimulator);
 
         assertEquals(expectedOutput, outContent.toString());
     }
@@ -40,7 +40,7 @@ public class BibliotecaAppTest {
     public void testShouldDisplayMenuOnStartingApplication() {
         Menu menu = mock(Menu.class);
 
-        new BibliotecaApp(menu);
+        new BibliotecaApp(menu, mock(ConsoleSimulator.class));
 
         verify(menu, times(1)).display();
     }

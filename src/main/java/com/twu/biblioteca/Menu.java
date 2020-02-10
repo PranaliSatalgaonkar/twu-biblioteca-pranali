@@ -37,11 +37,11 @@ public class Menu {
     }
 
     private Book getBookDetails() {
-        System.out.println("Enter title of the book: ");
+        consoleSimulator.display("Enter title of the book: ");
         String bookTitle = consoleSimulator.scanBookTitle();
-        System.out.println("Enter author : ");
+        consoleSimulator.display("Enter author : ");
         String bookAuthor = consoleSimulator.scanBookAuthor();
-        System.out.println("Enter publication year : ");
+        consoleSimulator.display("Enter publication year : ");
         int bookPublicationYear = consoleSimulator.scanBookPublicationYear();
         return new Book(bookTitle, bookAuthor, bookPublicationYear);
     }
