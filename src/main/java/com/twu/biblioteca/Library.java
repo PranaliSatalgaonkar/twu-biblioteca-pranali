@@ -24,21 +24,21 @@ public class Library {
     }
 
     public void checkoutBook(String title) {
-        try {
-            Book book = getBook(title);
+        Book book = getBook(title);
+        if (book == null)
+            System.out.println("Sorry, that book is not available");
+        else {
             bookList.remove(book);
             System.out.println("Thank you! Enjoy the book");
-        } catch (BookNotFoundException bookNotFoundException) {
-            System.out.println("Sorry, that book is not available");
         }
     }
 
-    protected Book getBook(String title) throws BookNotFoundException {
+    protected Book getBook(String title) {
         for (Book book : bookList) {
             if (book.title.equals(title))
                 return book;
         }
-        throw new BookNotFoundException();
+        return null;
     }
 
     public void returnBook(Book book) {

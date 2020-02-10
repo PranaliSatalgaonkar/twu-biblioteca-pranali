@@ -37,10 +37,12 @@ class LibraryTest {
     @Test
     public void testShouldCheckoutABook() {
         Library library = new Library();
+        String expectedOutput = "Thank you! Enjoy the book\nSorry, that book is not available\n" ;
 
         library.checkoutBook("Pride and Prejudice");
+        library.checkoutBook("Pride and Prejudice");
 
-        assertThrows(BookNotFoundException.class, () -> library.getBook("Pride and Prejudice"));
+        assertEquals(expectedOutput, outContent.toString());
     }
 
     @Test
