@@ -18,31 +18,26 @@ public class Menu {
         performAction(option);
     }
 
-    public void performAction(int option) {
-        String bookTitle, bookAuthor;
-        int bookPublicationYear;
+    private Book getBookDetails() {
+        System.out.println("Enter title of the book: ");
+        String bookTitle = inputScanner.scanBookTitle();
+        System.out.println("Enter author : ");
+        String bookAuthor = inputScanner.scanBookAuthor();
+        System.out.println("Enter publication year : ");
+        int bookPublicationYear = inputScanner.scanBookPublicationYear();
+        return new Book(bookTitle, bookAuthor, bookPublicationYear);
+    }
 
-        switch (option) { // TODO: can this be cleaner ?
+    public void performAction(int option) {
+        switch (option) {
             case 1:
                 library.displayList();
                 break;
             case 2:
-                System.out.println("Enter title of the book: ");
-                bookTitle = inputScanner.scanBookTitle();
-                System.out.println("Enter author : ");
-                bookAuthor = inputScanner.scanBookAuthor();
-                System.out.println("Enter publication year : ");
-                bookPublicationYear = inputScanner.scanBookPublicationYear();
-                library.checkout(new Book(bookTitle, bookAuthor, bookPublicationYear));
+                library.checkout(getBookDetails());
                 break;
             case 3:
-                System.out.println("Enter title of the book : ");
-                bookTitle = inputScanner.scanBookTitle();
-                System.out.println("Enter author : ");
-                bookAuthor = inputScanner.scanBookAuthor();
-                System.out.println("Enter publication year : ");
-                bookPublicationYear = inputScanner.scanBookPublicationYear();
-                library.returnBook(new Book(bookTitle, bookAuthor, bookPublicationYear));
+                library.returnBook(getBookDetails());
                 break;
             case 4:
                 return;
