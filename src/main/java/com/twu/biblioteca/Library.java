@@ -1,7 +1,5 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.exceptions.BookNotFoundException;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
