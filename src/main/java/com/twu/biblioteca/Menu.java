@@ -19,7 +19,8 @@ public class Menu {
     }
 
     public void performAction(int option) {
-        String bookTitle;
+        String bookTitle, bookAuthor;
+        int bookPublicationYear;
 
         switch (option) { // TODO: can this be cleaner ?
             case 1:
@@ -28,15 +29,19 @@ public class Menu {
             case 2:
                 System.out.println("Enter title of the book: ");
                 bookTitle = inputScanner.scanBookTitle();
-                library.checkout(bookTitle);
+                System.out.println("Enter author : ");
+                bookAuthor = inputScanner.scanBookAuthor();
+                System.out.println("Enter publication year : ");
+                bookPublicationYear = inputScanner.scanBookPublicationYear();
+                library.checkout(new Book(bookTitle, bookAuthor, bookPublicationYear));
                 break;
             case 3:
                 System.out.println("Enter title of the book : ");
                 bookTitle = inputScanner.scanBookTitle();
                 System.out.println("Enter author : ");
-                String bookAuthor = inputScanner.scanBookAuthor();
+                bookAuthor = inputScanner.scanBookAuthor();
                 System.out.println("Enter publication year : ");
-                int bookPublicationYear = inputScanner.scanBookPublicationYear();
+                bookPublicationYear = inputScanner.scanBookPublicationYear();
                 library.returnBook(new Book(bookTitle, bookAuthor, bookPublicationYear));
                 break;
             case 4:

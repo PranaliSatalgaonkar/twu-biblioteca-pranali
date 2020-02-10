@@ -38,8 +38,8 @@ class LibraryTest {
         Library library = new Library();
         String expectedOutput = "Thank you! Enjoy the book\nSorry, that book is not available\n" ;
 
-        library.checkout("Pride and Prejudice");
-        library.checkout("Pride and Prejudice");
+        library.checkout(new Book("Pride and Prejudice", "Jane Austen", 1813));
+        library.checkout(new Book("Pride and Prejudice", "Jane Austen", 1813));
 
         assertEquals(expectedOutput, outContent.toString());
     }
@@ -49,7 +49,7 @@ class LibraryTest {
         Library library = new Library();
         String expectedOutput = "Thank you! Enjoy the book\n" ;
 
-        library.checkout("The Diary of a Young Girl");
+        library.checkout(new Book("The Diary of a Young Girl", "Anne Frank", 1947));
 
         assertEquals(expectedOutput, outContent.toString());
     }
@@ -59,7 +59,7 @@ class LibraryTest {
         Library library = new Library();
         String expectedOutput = "Sorry, that book is not available\n" ;
 
-        library.checkout("Secret Seven");
+        library.checkout(new Book("The Secret Seven", "Enid Blyton", 1949));
 
         assertEquals(expectedOutput, outContent.toString());
     }

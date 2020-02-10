@@ -23,14 +23,16 @@ public class Library {
             System.out.println(book.getDetails());
     }
 
-    public void checkout(String title) {
-        Book book = getBook(title);
-        if (book == null)
-            System.out.println("Sorry, that book is not available"); // TODO: is this srp
-        else {
+    public void checkout(Book book) {
+        if (isInLibrary(book)) {
             bookList.remove(book);
             System.out.println("Thank you! Enjoy the book");  // TODO: is this srp
-        }
+        } else
+            System.out.println("Sorry, that book is not available"); // TODO: is this srp
+    }
+
+    private boolean isInLibrary(Book book) {
+        return bookList.contains(book);
     }
 
     public void returnBook(Book book) {
@@ -38,14 +40,6 @@ public class Library {
             bookList.add(book);
             System.out.println("Thank you for returning the book");  // TODO: is this srp
         }
-    }
-
-    protected Book getBook(String title) { //TODO: private
-        for (Book book : bookList) {
-            if (book.title.equals(title)) // TODO: compare books instead of title
-                return book;
-        }
-        return null;
     }
 
     private boolean isValidBook(Book book) {
