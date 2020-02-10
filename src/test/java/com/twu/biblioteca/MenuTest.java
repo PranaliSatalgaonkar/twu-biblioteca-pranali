@@ -44,7 +44,7 @@ class MenuTest {
         when(inputScanner.scanOption()).thenReturn(5);
         int option = inputScanner.scanOption();
 
-        menu.performMenuAction(option);
+        menu.performAction(option);
 
         assertEquals(expectedOutput, outContent.toString());
         System.setIn(System.in);

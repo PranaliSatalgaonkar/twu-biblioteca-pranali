@@ -14,12 +14,11 @@ public class Menu {
     public void displayMenu() {
         System.out.println("\nMENU:\n\n1. Display books in library.\n2. Checkout Book.\n3. Return Book.\n4. Quit Application.\n\nEnter your choice : ");
         int option = inputScanner.scanOption();
-//        System.out.println(option);
 
-        performMenuAction(option);
+        performAction(option);
     } //TODO: display
 
-    public void performMenuAction(int option) {
+    public void performAction(int option) {
         String bookTitle;
 
         switch (option) { // TODO: can this be cleaner ?
@@ -46,5 +45,5 @@ public class Menu {
             default:
                 System.out.println("Please select a valid option!");
         }
-    } // TODO: name performAction
+    }
 }
