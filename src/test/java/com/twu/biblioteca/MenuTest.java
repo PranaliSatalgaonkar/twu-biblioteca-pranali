@@ -47,6 +47,5 @@ class MenuTest {
         menu.performAction(option);
 
         assertEquals(expectedOutput, outContent.toString());
-        System.setIn(System.in);
     }
 }
