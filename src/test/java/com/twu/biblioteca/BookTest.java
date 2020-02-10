@@ -11,6 +11,6 @@ class BookTest {
         Book book = new Book("The Spy", "Paulo Coelho", 2016);
         String expectedOutput = book.title + " " + book.author + " " + book.publicationYear;
 
-        assertEquals(expectedOutput, book.getBookDetails());
+        assertEquals(expectedOutput, book.getDetails());
     }
 }

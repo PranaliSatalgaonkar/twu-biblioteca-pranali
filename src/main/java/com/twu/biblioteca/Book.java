@@ -13,7 +13,7 @@ public class Book {
         this.publicationYear = publicationYear;
     }
 
-    public String getBookDetails() { //TODO: no need to repeat book
+    public String getDetails() {
         return (title + " " + author + " " + publicationYear);
     }
 

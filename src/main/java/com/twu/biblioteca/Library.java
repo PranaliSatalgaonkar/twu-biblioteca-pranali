@@ -20,7 +20,7 @@ public class Library {
 
     public void displayBookList() { //TODO: book
         for (Book book : bookList)
-            System.out.println(book.getBookDetails());
+            System.out.println(book.getDetails());
     }
 
     public void checkoutBook(String title) {
