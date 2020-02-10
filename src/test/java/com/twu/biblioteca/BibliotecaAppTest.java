@@ -42,6 +42,6 @@ public class BibliotecaAppTest {
 
         new BibliotecaApp(menu);
 
-        verify(menu, times(1)).displayMenu();
+        verify(menu, times(1)).display();
     }
 }

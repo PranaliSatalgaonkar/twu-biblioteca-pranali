@@ -31,7 +31,7 @@ class MenuTest {
         Menu menu = new Menu(library, inputScanner);
         when(inputScanner.scanOption()).thenReturn(1);
 
-        menu.displayMenu();
+        menu.display();
 
         verify(library, times(1)).displayList();
     }

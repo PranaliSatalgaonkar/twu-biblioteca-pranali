@@ -11,12 +11,12 @@ public class Menu {
         this.inputScanner = inputScanner;
     }
 
-    public void displayMenu() {
+    public void display() {
         System.out.println("\nMENU:\n\n1. Display books in library.\n2. Checkout Book.\n3. Return Book.\n4. Quit Application.\n\nEnter your choice : ");
         int option = inputScanner.scanOption();
 
         performAction(option);
-    } //TODO: display
+    }
 
     public void performAction(int option) {
         String bookTitle;

@@ -8,7 +8,7 @@ public class BibliotecaApp {
 
     public BibliotecaApp(Menu menu) {
         displayWelcomeMessage();
-        menu.displayMenu();
+        menu.display();
     }
 
     void displayWelcomeMessage() {
