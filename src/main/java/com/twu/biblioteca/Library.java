@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Library {
     //TODO : structure, d, c, p , a, internal apis
-    List<Book> bookList; //TODO: private
-    Inventory inventory; //TODO: private
+    private List<Book> bookList;
+    private Inventory inventory;
 
     public Library() {
         inventory = new Inventory();
