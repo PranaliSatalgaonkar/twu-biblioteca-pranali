@@ -31,7 +31,7 @@ public class Library {
     }
 
     public void returnBook(Book book) {
-        if (isValidBook(book)) {
+        if (isBelongingToLibrary(book)) {
             bookList.add(book);
             System.out.println("Thank you for returning the book");  // TODO: is this srp
         }
@@ -41,7 +41,7 @@ public class Library {
         return bookList.contains(book);
     }
 
-    private boolean isValidBook(Book book) {
+    private boolean isBelongingToLibrary(Book book) {
         if (!inventory.isInInventory(book)) {
             System.out.println("That is not a valid book to return");
             return false;
