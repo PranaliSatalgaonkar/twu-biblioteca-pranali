@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Library {
-    private List<Book> bookList;
+    protected List<Book> bookList;
     private List<Movie> movieList;
     private Inventory inventory;
     private ConsoleSimulator consoleSimulator;

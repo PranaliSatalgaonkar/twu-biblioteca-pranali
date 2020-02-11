@@ -1,107 +1,99 @@
 package com.twu.biblioteca;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 class LibraryTest {
 
-    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-
-    @BeforeEach
-    public void setUp() {
-        System.setOut(new PrintStream(outContent));
-    }
-
-    @AfterEach
-    public void reset() {
-        System.setOut(System.out);
-    }
-
     @Test
     public void testShouldDisplayBookList() {
-        Library library = new Library(new ConsoleSimulator());
-        String expectedOutput = "Pride and Prejudice Jane Austen 1813\nThe Diary of a Young Girl Anne Frank 1947\nTo Kill a Mockingbird Harper Lee 1960\nLittle Women Louisa May Alcott 1868\nThe Alchemist Paulo Coelho 1988\n";
+        ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
+        Library library = new Library(consoleSimulator);
 
         library.displayList();
 
-        assertEquals(expectedOutput, outContent.toString());
+        verify(consoleSimulator, times(1)).display("Pride and Prejudice Jane Austen 1813");
+        verify(consoleSimulator, times(1)).display("The Diary of a Young Girl Anne Frank 1947");
+        verify(consoleSimulator, times(1)).display("To Kill a Mockingbird Harper Lee 1960");
+        verify(consoleSimulator, times(1)).display("Little Women Louisa May Alcott 1868");
+        verify(consoleSimulator, times(1)).display("The Alchemist Paulo Coelho 1988");
     }
 
     @Test
     public void testShouldCheckoutABook() {
-        Library library = new Library(new ConsoleSimulator());
-        String expectedOutput = "Thank you! Enjoy the book\nSorry, that book is not available\n";
+        ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
+        Library library = new Library(consoleSimulator);
 
         library.checkout(new Book("Pride and Prejudice", "Jane Austen", 1813));
         library.checkout(new Book("Pride and Prejudice", "Jane Austen", 1813));
 
-        assertEquals(expectedOutput, outContent.toString());
+        verify(consoleSimulator, times(1)).display("Thank you! Enjoy the book");
+        verify(consoleSimulator, times(1)).display("Sorry, that book is not available");
     }
 
     @Test
     public void testShouldNotifyOnSuccessfulCheckout() {
-        Library library = new Library(new ConsoleSimulator());
-        String expectedOutput = "Thank you! Enjoy the book\n";
+        ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
+        Library library = new Library(consoleSimulator);
 
         library.checkout(new Book("The Diary of a Young Girl", "Anne Frank", 1947));
 
-        assertEquals(expectedOutput, outContent.toString());
+        verify(consoleSimulator, times(1)).display("Thank you! Enjoy the book");
     }
 
     @Test
     public void testShouldNotifyOnUnsuccessfulCheckout() {
-        Library library = new Library(new ConsoleSimulator());
-        String expectedOutput = "Sorry, that book is not available\n";
-
+        ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
+        Library library = new Library(consoleSimulator);
         library.checkout(new Book("The Secret Seven", "Enid Blyton", 1949));
 
-        assertEquals(expectedOutput, outContent.toString());
+        verify(consoleSimulator, times(1)).display("Sorry, that book is not available");
     }
 
     @Test
     public void testShouldReturnABook() {
-        Library library = new Library(new ConsoleSimulator());
-        String expectedOutput = "Thank you for returning the book\nPride and Prejudice Jane Austen 1813\nThe Diary of a Young Girl Anne Frank 1947\nTo Kill a Mockingbird Harper Lee 1960\nLittle Women Louisa May Alcott 1868\nThe Alchemist Paulo Coelho 1988\nThe Alchemist Paulo Coelho 1988\n";
+        ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
+        Library library = new Library(consoleSimulator);
 
-        library.returnBook(new Book("The Alchemist", "Paulo Coelho", 1988));
-        library.displayList();
+        Book book = new Book("The Alchemist", "Paulo Coelho", 1988);
+        library.returnBook(book);
 
-        assertEquals(expectedOutput, outContent.toString());
+        assertTrue(library.bookList.contains(book));
     }
 
     @Test
     public void testShouldNotifyOnSuccessfulReturn() {
-        Library library = new Library(new ConsoleSimulator());
-        String expectedOutput = "Thank you for returning the book\n";
+        ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
+        Library library = new Library(consoleSimulator);
 
         library.returnBook(new Book("The Alchemist", "Paulo Coelho", 1988));
 
-        assertEquals(expectedOutput, outContent.toString());
+        verify(consoleSimulator, times(1)).display("Thank you for returning the book");
     }
 
     @Test
     public void testShouldNotifyOnUnsuccessfulReturn() {
-        Library library = new Library(new ConsoleSimulator());
-        String expectedOutput = "That is not a valid book to return\n";
+        ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
+        Library library = new Library(consoleSimulator);
 
         library.returnBook(new Book("Alchemist", "Paulo Coelho", 1988));
 
-        assertEquals(expectedOutput, outContent.toString());
+        verify(consoleSimulator, times(1)).display("That is not a valid book to return");
     }
 
     @Test
     public void testShouldDisplayMovieList() {
-        Library library = new Library(new ConsoleSimulator());
-        String expectedOutput = "Parasite 2019 Bong Joon-ho 10\nThe Irishman 2019 Martin Scorsese 7\nBooksmart 2019 Olivia Wilde 7\nThe Farewell 2019 Lulu Wang 8\nKnives Out 2019 Rian Johnson unrated\n";
+        ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
+        Library library = new Library(consoleSimulator);
 
         library.displayMovieList();
 
-        assertEquals(expectedOutput, outContent.toString());
+        verify(consoleSimulator, times(1)).display("Parasite 2019 Bong Joon-ho 10");
+        verify(consoleSimulator, times(1)).display("The Irishman 2019 Martin Scorsese 7");
+        verify(consoleSimulator, times(1)).display("Booksmart 2019 Olivia Wilde 7");
+        verify(consoleSimulator, times(1)).display("The Farewell 2019 Lulu Wang 8");
+        verify(consoleSimulator, times(1)).display("Knives Out 2019 Rian Johnson unrated");
     }
 }
