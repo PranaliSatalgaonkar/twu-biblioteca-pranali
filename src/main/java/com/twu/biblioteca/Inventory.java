@@ -26,6 +26,6 @@ public class Inventory {
     }
 
     public boolean isInInventory(Movie movie) {
-        return true;
+        return inventoryMovieList.contains(movie);
     }
 }

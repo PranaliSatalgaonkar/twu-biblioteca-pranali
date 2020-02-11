@@ -29,4 +29,12 @@ class InventoryTest {
 
         assertTrue(inventory.isInInventory(movie));
     }
+
+    @Test
+    public void testShouldCheckIfMovieIsAbsentInInventory() {
+        Inventory inventory = new Inventory();
+        Movie movie = new Movie("1917", 2019, "Sam Mendes", "9");
+
+        assertFalse(inventory.isInInventory(movie));
+    }
 }
