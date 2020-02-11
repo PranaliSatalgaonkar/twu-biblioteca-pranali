@@ -21,7 +21,7 @@ public class Menu {
     }
 
     public void performAction(int option) {
-        switch (option) {//TODO: loop
+        switch (option) {
             case 1:
                 library.displayList();
                 break;
