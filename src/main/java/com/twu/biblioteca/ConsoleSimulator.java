@@ -22,6 +22,10 @@ public class ConsoleSimulator {
         return scanner.nextInt();
     }
 
+    public void scanBlankLine() {
+        scanner.nextLine();
+    }
+
     public void display(String message) {
         System.out.println(message);
     }

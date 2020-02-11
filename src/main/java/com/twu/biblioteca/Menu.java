@@ -40,6 +40,7 @@ public class Menu {
     }
 
     private Book getBookDetails() {
+        consoleSimulator.scanBlankLine();
         consoleSimulator.display("Enter title of the book: ");
         String bookTitle = consoleSimulator.scanBookTitle();
         consoleSimulator.display("Enter author : ");
