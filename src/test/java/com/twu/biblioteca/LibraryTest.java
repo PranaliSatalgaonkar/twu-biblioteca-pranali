@@ -104,7 +104,7 @@ class LibraryTest {
 
         library.checkout(new Movie("The Farewell", 2019, "Lulu Wang", "8"));
 
-        verify(consoleSimulator, times(1)).display("Thank you! Enjoy the book");
+        verify(consoleSimulator, times(1)).display("Thank you! Enjoy the movie");
     }
 
     @Test
