@@ -35,7 +35,7 @@ public class Menu {
                 return;
 //                System.exit(1); //todo: system.exit0
             default:
-                System.out.println("Please select a valid option!");
+                consoleSimulator.display("Please select a valid option!");
         }
     }
 
