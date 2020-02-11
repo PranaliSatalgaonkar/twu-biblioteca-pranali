@@ -25,7 +25,7 @@ public class Library {
                 new Movie("Knives Out", 2019, "Rian Johnson", "unrated"));
     }
 
-    public void displayList() {
+    public void displayBookList() {
         for (Book book : bookList)
             consoleSimulator.display(book.getDetails());
     }

@@ -12,7 +12,7 @@ class LibraryTest {
         ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
         Library library = new Library(consoleSimulator);
 
-        library.displayList();
+        library.displayBookList();
 
         verify(consoleSimulator, times(1)).display("Pride and Prejudice Jane Austen 1813");
         verify(consoleSimulator, times(1)).display("The Diary of a Young Girl Anne Frank 1947");

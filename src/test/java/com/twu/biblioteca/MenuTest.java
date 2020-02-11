@@ -33,7 +33,7 @@ class MenuTest {
 
         menu.display();
 
-        verify(library, times(1)).displayList();
+        verify(library, times(1)).displayBookList();
     }
 
     @Test

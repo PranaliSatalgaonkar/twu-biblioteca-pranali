@@ -23,7 +23,7 @@ public class Menu {
     public void performAction(int option) {
         switch (option) {
             case 1:
-                library.displayList();
+                library.displayBookList();
                 break;
             case 2:
                 library.checkout(getBookDetails());
