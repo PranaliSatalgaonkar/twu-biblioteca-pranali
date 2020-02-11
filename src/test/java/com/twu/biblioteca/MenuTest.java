@@ -29,7 +29,7 @@ class MenuTest {
         Library library = mock(Library.class);
         ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
         Menu menu = new Menu(library, consoleSimulator);
-        when(consoleSimulator.scanOption()).thenReturn(1);
+        when(consoleSimulator.scanOption()).thenReturn(1, 4);
 
         menu.display();
 

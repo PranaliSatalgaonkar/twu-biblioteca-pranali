@@ -11,10 +11,13 @@ public class Menu {
     }
 
     public void display() {
-        consoleSimulator.display("\nMENU:\n\n1. Display books in library.\n2. Checkout Book.\n3. Return Book.\n4. Quit Application.\n\nEnter your choice : ");
-        int option = consoleSimulator.scanOption();
-
-        performAction(option);
+        while (true) {
+            consoleSimulator.display("\nMENU:\n\n1. Display books in library.\n2. Checkout Book.\n3. Return Book.\n4. Quit Application.\n\nEnter your choice : ");
+            int option = consoleSimulator.scanOption();
+            if (option == 4)
+                break;
+            performAction(option);
+        }
     }
 
     public void performAction(int option) {
