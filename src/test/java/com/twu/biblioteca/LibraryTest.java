@@ -96,4 +96,14 @@ class LibraryTest {
         verify(consoleSimulator, times(1)).display("The Farewell 2019 Lulu Wang 8");
         verify(consoleSimulator, times(1)).display("Knives Out 2019 Rian Johnson unrated");
     }
+
+    @Test
+    public void testShouldCheckoutAMovie() {
+        ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
+        Library library = new Library(consoleSimulator);
+
+        library.checkout(new Movie("The Farewell", 2019, "Lulu Wang", "8"));
+
+        verify(consoleSimulator, times(1)).display("Thank you! Enjoy the book");
+    }
 }

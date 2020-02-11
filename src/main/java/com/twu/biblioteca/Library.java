@@ -43,6 +43,13 @@ public class Library {
             consoleSimulator.display("Sorry, that book is not available");
     }
 
+    public void checkout(Movie movie) {
+        if (isInLibrary(movie)) {
+            bookList.remove(movie);
+            consoleSimulator.display("Thank you! Enjoy the book");
+        }
+    }
+
     public void returnBook(Book book) {
         if (isBelongingToLibrary(book)) {
             bookList.add(book);
@@ -52,6 +59,10 @@ public class Library {
 
     private boolean isInLibrary(Book book) {
         return bookList.contains(book);
+    }
+
+    private boolean isInLibrary(Movie movie) {
+        return movieList.contains(movie);
     }
 
     private boolean isBelongingToLibrary(Book book) {
