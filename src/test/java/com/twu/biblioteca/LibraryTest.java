@@ -94,4 +94,14 @@ class LibraryTest {
 
         assertEquals(expectedOutput, outContent.toString());
     }
+
+    @Test
+    public void testShouldDisplayMovieList() {
+        Library library = new Library(new ConsoleSimulator());
+        String expectedOutput = "Parasite 2019 Bong Joon-ho 10\nThe Irishman 2019 Martin Scorsese 7\nBooksmart 2019 Olivia Wilde 7\nThe Farewell 2019 Lulu Wang 8\nKnives Out 2019 Rian Johnson unrated\n";
+
+        library.displayMovieList();
+
+        assertEquals(expectedOutput, outContent.toString());
+    }
 }

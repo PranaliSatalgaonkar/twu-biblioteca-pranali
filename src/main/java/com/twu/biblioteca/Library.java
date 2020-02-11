@@ -6,6 +6,7 @@ import java.util.List;
 
 public class Library {
     private List<Book> bookList;
+    private List<Movie> movieList;
     private Inventory inventory;
     private ConsoleSimulator consoleSimulator;
 
@@ -17,11 +18,21 @@ public class Library {
                 new Book("To Kill a Mockingbird", "Harper Lee", 1960),
                 new Book("Little Women", "Louisa May Alcott", 1868),
                 new Book("The Alchemist", "Paulo Coelho", 1988)));
+        movieList = Arrays.asList(new Movie("Parasite", 2019, "Bong Joon-ho", "10"),
+                new Movie("The Irishman", 2019, "Martin Scorsese", "7"),
+                new Movie("Booksmart", 2019, "Olivia Wilde", "7"),
+                new Movie("The Farewell", 2019, "Lulu Wang", "8"),
+                new Movie("Knives Out", 2019, "Rian Johnson", "unrated"));
     }
 
     public void displayList() {
         for (Book book : bookList)
             consoleSimulator.display(book.getDetails());
+    }
+
+    public void displayMovieList() {
+        for (Movie movie : movieList)
+            consoleSimulator.display(movie.getDetails());
     }
 
     public void checkout(Book book) {
