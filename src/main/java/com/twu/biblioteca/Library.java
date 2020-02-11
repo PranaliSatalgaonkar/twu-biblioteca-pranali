@@ -47,7 +47,8 @@ public class Library {
         if (isInLibrary(movie)) {
             bookList.remove(movie);
             consoleSimulator.display("Thank you! Enjoy the book");
-        }
+        } else
+            consoleSimulator.display("Sorry, that movie is not available");
     }
 
     public void returnBook(Book book) {

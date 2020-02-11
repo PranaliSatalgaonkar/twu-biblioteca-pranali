@@ -106,4 +106,14 @@ class LibraryTest {
 
         verify(consoleSimulator, times(1)).display("Thank you! Enjoy the book");
     }
+
+    @Test
+    public void testShouldNotifyOnUnsuccessfulCheckoutOfMovie() {
+        ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
+        Library library = new Library(consoleSimulator);
+
+        library.checkout(new Movie("The Farewell", 2019, "Wang", "8"));
+
+        verify(consoleSimulator, times(1)).display("Sorry, that movie is not available");
+    }
 }
