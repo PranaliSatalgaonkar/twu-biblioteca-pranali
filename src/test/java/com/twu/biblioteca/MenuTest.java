@@ -40,7 +40,7 @@ class MenuTest {
     public void testShouldNotifyOnChoosingInvalidOption() {
         ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
         Menu menu = new Menu(mock(Library.class), consoleSimulator);
-        String expectedOutput = "Please select a valid option!\n" ;
+        String expectedOutput = "Please select a valid option!\n";
         when(consoleSimulator.scanOption()).thenReturn(5);
         int option = consoleSimulator.scanOption();
 

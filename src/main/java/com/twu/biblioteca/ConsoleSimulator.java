@@ -22,7 +22,7 @@ public class ConsoleSimulator {
         return scanner.nextInt();
     }
 
-    public void display(String message){
+    public void display(String message) {
         System.out.println(message);
     }
 }

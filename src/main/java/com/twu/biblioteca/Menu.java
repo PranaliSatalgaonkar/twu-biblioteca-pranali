@@ -11,14 +11,14 @@ public class Menu {
     }
 
     public void display() {
-        System.out.println("\nMENU:\n\n1. Display books in library.\n2. Checkout Book.\n3. Return Book.\n4. Quit Application.\n\nEnter your choice : ");
+        consoleSimulator.display("\nMENU:\n\n1. Display books in library.\n2. Checkout Book.\n3. Return Book.\n4. Quit Application.\n\nEnter your choice : ");
         int option = consoleSimulator.scanOption();
 
         performAction(option);
     }
 
     public void performAction(int option) {
-        switch (option) {
+        switch (option) {//TODO: loop
             case 1:
                 library.displayList();
                 break;
@@ -30,7 +30,7 @@ public class Menu {
                 break;
             case 4:
                 return;
-//                System.exit(1);
+//                System.exit(1); //todo: system.exit0
             default:
                 System.out.println("Please select a valid option!");
         }

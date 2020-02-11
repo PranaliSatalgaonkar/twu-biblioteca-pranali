@@ -27,15 +27,15 @@ public class Library {
     public void checkout(Book book) {
         if (isInLibrary(book)) {
             bookList.remove(book);
-            consoleSimulator.display("Thank you! Enjoy the book");  // TODO: is this srp
+            consoleSimulator.display("Thank you! Enjoy the book");
         } else
-            consoleSimulator.display("Sorry, that book is not available"); // TODO: is this srp
+            consoleSimulator.display("Sorry, that book is not available");
     }
 
     public void returnBook(Book book) {
         if (isBelongingToLibrary(book)) {
             bookList.add(book);
-            consoleSimulator.display("Thank you for returning the book");  // TODO: is this srp
+            consoleSimulator.display("Thank you for returning the book");
         }
     }
 
