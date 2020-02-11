@@ -2,7 +2,6 @@ package com.twu.biblioteca;
 
 import java.util.Scanner;
 
-//TODO: tests
 public class ConsoleSimulator {
     private Scanner scanner = new Scanner(System.in);
 
