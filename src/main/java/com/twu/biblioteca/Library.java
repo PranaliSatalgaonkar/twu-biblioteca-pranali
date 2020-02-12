@@ -56,9 +56,12 @@ public class Library {
     }
 
     public void returnBook(Book book) {
-        if (isBelongingToLibrary(book)) {
-            bookList.add(book);
-            consoleSimulator.display("Thank you for returning the book");
+        User user = new User(consoleSimulator.scanLibraryNumber(), consoleSimulator.scanPassword());
+        if (new Authenticator().login(user)) {
+            if (isBelongingToLibrary(book)) {
+                bookList.add(book);
+                consoleSimulator.display("Thank you for returning the book");
+            }
         }
     }
 

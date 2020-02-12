@@ -63,6 +63,8 @@ class LibraryTest {
     public void testShouldReturnABook() {
         ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
         Library library = new Library(consoleSimulator);
+        when(consoleSimulator.scanLibraryNumber()).thenReturn("123-4567");
+        when(consoleSimulator.scanPassword()).thenReturn("abcd");
 
         Book book = new Book("The Alchemist", "Paulo Coelho", 1988);
         library.returnBook(book);
@@ -74,6 +76,8 @@ class LibraryTest {
     public void testShouldNotifyOnSuccessfulReturnOfBook() {
         ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
         Library library = new Library(consoleSimulator);
+        when(consoleSimulator.scanLibraryNumber()).thenReturn("123-4567");
+        when(consoleSimulator.scanPassword()).thenReturn("abcd");
 
         library.returnBook(new Book("The Alchemist", "Paulo Coelho", 1988));
 
@@ -84,6 +88,8 @@ class LibraryTest {
     public void testShouldNotifyOnUnsuccessfulReturnOfBook() {
         ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
         Library library = new Library(consoleSimulator);
+        when(consoleSimulator.scanLibraryNumber()).thenReturn("123-4567");
+        when(consoleSimulator.scanPassword()).thenReturn("abcd");
 
         library.returnBook(new Book("Alchemist", "Paulo Coelho", 1988));
 
