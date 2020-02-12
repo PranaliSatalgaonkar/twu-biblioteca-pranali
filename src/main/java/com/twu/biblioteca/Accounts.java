@@ -16,8 +16,6 @@ public class Accounts {
     }
 
     public boolean validate(User user) {
-        if (userList.contains(user))
-            return true;
-        return false;
+        return userList.contains(user);
     }
 }
