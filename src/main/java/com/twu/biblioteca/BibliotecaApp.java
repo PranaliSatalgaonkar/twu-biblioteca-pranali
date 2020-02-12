@@ -4,11 +4,14 @@ public class BibliotecaApp {
     private ConsoleSimulator consoleSimulator;
 
     public static void main(String[] args) {
-        new BibliotecaApp(new Menu(new Library(new ConsoleSimulator()), new ConsoleSimulator()), new ConsoleSimulator());
+        new BibliotecaApp(new ConsoleSimulator()).start(new Menu(new Library(new ConsoleSimulator()), new ConsoleSimulator()));
     }
 
-    public BibliotecaApp(Menu menu, ConsoleSimulator consoleSimulator) {
+    public BibliotecaApp(ConsoleSimulator consoleSimulator) {
         this.consoleSimulator = consoleSimulator;
+    }
+
+    public void start(Menu menu) {
         displayWelcomeMessage();
         menu.display();
     }
