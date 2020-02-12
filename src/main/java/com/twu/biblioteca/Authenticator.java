@@ -16,6 +16,10 @@ public class Authenticator {
     }
 
     public boolean login(User user) {
-        return registeredUsersList.contains(user);
+        for(User registeredUser : registeredUsersList){
+            if(registeredUser.getLibraryNumber().equals(user.getLibraryNumber()) && registeredUser.getPassword().equals(user.getPassword()))
+                return true;
+        }
+        return false;
     }
 }
