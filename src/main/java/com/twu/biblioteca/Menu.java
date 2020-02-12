@@ -12,7 +12,7 @@ public class Menu {
 
     public void display() {
         while (true) {
-            consoleSimulator.display("\nMENU:\n\n1. Display books in library.\n2. Checkout Book.\n3. Return Book.\n4. Quit Application.\n\nEnter your choice : ");
+            consoleSimulator.display("\nMENU:\n\n1. Display books in library.\n2. Checkout Book.\n3. Return Book.\n4. Display movies in library\n5. Checkout Movie\n6. View my details\n7. Quit Application.\n\nEnter your choice : ");
             int option = consoleSimulator.scanOption();
             if (option == 4)
                 break;

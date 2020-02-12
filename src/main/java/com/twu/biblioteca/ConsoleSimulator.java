@@ -25,15 +25,14 @@ public class ConsoleSimulator {
         scanner.nextLine();
     }
 
-    public void display(String message) {
-        System.out.println(message);
-    }
-
     public String scanLibraryNumber() {
         return scanner.next();
     }
 
     public String scanPassword() {
         return scanner.next();
+    }
+    public void display(String message) {
+        System.out.println(message);
     }
 }
