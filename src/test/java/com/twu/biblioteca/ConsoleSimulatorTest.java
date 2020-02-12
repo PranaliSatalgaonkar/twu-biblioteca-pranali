@@ -81,6 +81,16 @@ class ConsoleSimulatorTest {
     }
 
     @Test
+    public void testShouldReturnScannedMovieReleaseYear() {
+        String input = "2019";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        ConsoleSimulator consoleSimulator = new ConsoleSimulator();
+        int movieReleaseYear = consoleSimulator.scanMovieReleaseYear();
+        assertEquals(2019, movieReleaseYear);
+        System.setIn(System.in);
+    }
+
+    @Test
     public void testShouldDisplayMessage() {
         final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));

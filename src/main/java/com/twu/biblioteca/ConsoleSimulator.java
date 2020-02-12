@@ -37,6 +37,10 @@ public class ConsoleSimulator {
         return scanner.nextLine();
     }
 
+    public int scanMovieReleaseYear() {
+        return scanner.nextInt();
+    }
+
     public void display(String message) {
         System.out.println(message);
     }
