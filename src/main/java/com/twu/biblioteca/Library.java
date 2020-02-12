@@ -36,7 +36,9 @@ public class Library {
     }
 
     public void checkout(Book book) {
+        consoleSimulator.display("Enter library number : ");
         String libraryNumber = consoleSimulator.scanLibraryNumber();
+        consoleSimulator.display("Enter password : ");
         String password = consoleSimulator.scanPassword();
         if (new Authenticator().login(libraryNumber, password)) {
             if (isInLibrary(book)) {
