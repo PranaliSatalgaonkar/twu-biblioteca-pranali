@@ -34,12 +34,29 @@ public class Menu {
             case 4:
                 library.displayMovieList();
                 break;
+            case 5:
+                library.checkout(getMovieDetails());
+                break;
             case 7:
                 return;
 //                System.exit(1); //todo: system.exit0
             default:
                 consoleSimulator.display("Please select a valid option!");
         }
+    }
+
+    private Movie getMovieDetails() {
+        consoleSimulator.scanBlankLine();
+        consoleSimulator.display("Enter name of the movie: ");
+        String movieName = consoleSimulator.scanMovieName();
+        consoleSimulator.display("Enter release year : ");
+        int movieReleaseYear = consoleSimulator.scanMovieReleaseYear();
+        consoleSimulator.display("Enter name of the director : ");
+        consoleSimulator.scanBlankLine();
+        String movieDirector = consoleSimulator.scanMovieDirector();
+        consoleSimulator.display("Enter movie rating : ");
+        String movieRating = consoleSimulator.scanMovieRating();
+        return new Movie(movieName, movieReleaseYear, movieDirector, movieRating);
     }
 
     private Book getBookDetails() {

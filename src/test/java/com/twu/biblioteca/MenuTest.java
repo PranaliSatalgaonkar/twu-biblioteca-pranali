@@ -22,7 +22,7 @@ class MenuTest {
     public void testShouldNotifyOnChoosingInvalidOption() {
         ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
         Menu menu = new Menu(mock(Library.class), consoleSimulator);
-        when(consoleSimulator.scanOption()).thenReturn(5);
+        when(consoleSimulator.scanOption()).thenReturn(10);
         int option = consoleSimulator.scanOption();
 
         menu.performAction(option);

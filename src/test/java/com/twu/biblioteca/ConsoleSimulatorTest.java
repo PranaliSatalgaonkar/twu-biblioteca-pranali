@@ -105,8 +105,8 @@ class ConsoleSimulatorTest {
         String input = "10";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
         ConsoleSimulator consoleSimulator = new ConsoleSimulator();
-        int movieRating = consoleSimulator.scanMovieRating();
-        assertEquals(10, movieRating);
+        String movieRating = consoleSimulator.scanMovieRating();
+        assertEquals("10", movieRating);
         System.setIn(System.in);
     }
 
