@@ -36,7 +36,7 @@ class LibraryTest {
     }
 
     @Test
-    public void testShouldNotifyOnSuccessfulCheckout() {
+    public void testShouldNotifyOnSuccessfulCheckoutOfBook() {
         ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
         Library library = new Library(consoleSimulator);
         when(consoleSimulator.scanLibraryNumber()).thenReturn("123-4567");
@@ -48,7 +48,7 @@ class LibraryTest {
     }
 
     @Test
-    public void testShouldNotifyOnUnsuccessfulCheckout() {
+    public void testShouldNotifyOnUnsuccessfulCheckoutOfBook() {
         ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
         Library library = new Library(consoleSimulator);
         when(consoleSimulator.scanLibraryNumber()).thenReturn("123-4567");
@@ -71,7 +71,7 @@ class LibraryTest {
     }
 
     @Test
-    public void testShouldNotifyOnSuccessfulReturn() {
+    public void testShouldNotifyOnSuccessfulReturnOfBook() {
         ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
         Library library = new Library(consoleSimulator);
 
@@ -81,7 +81,7 @@ class LibraryTest {
     }
 
     @Test
-    public void testShouldNotifyOnUnsuccessfulReturn() {
+    public void testShouldNotifyOnUnsuccessfulReturnOfBook() {
         ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
         Library library = new Library(consoleSimulator);
 
