@@ -19,4 +19,12 @@ class UserTest {
 
         assertEquals("pqrs", user.getPassword());
     }
+
+    @Test
+    public void testShouldReturnUserInformation() {
+        User user = new User("999-9999", "pqrs", "User", "user@gmail.com", "1234567890");
+        String expectedOutput = "User user@gmail.com 1234567890";
+
+        assertEquals(expectedOutput, user.getUserInformation());
+    }
 }

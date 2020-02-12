@@ -26,6 +26,10 @@ public class User {
         return password;
     }
 
+    public String getUserInformation() {
+        return name + " " + email + " " + phoneNumber;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
