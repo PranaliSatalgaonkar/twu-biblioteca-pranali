@@ -60,7 +60,7 @@ class LibraryTest {
     }
 
     @Test
-    public void testShouldReturnABook() {
+    public void testShouldReturnABookOnlyIfUserIsLoggedIn() {
         ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
         Library library = new Library(consoleSimulator);
         when(consoleSimulator.scanLibraryNumber()).thenReturn("123-4567");
@@ -131,13 +131,25 @@ class LibraryTest {
     }
 
     @Test
-    public void testShouldNotifyOnUnsuccessfulLogin() {
+    public void testShouldNotifyOnUnsuccessfulLoginWhileCheckingOutABook() {
         ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
         Library library = new Library(consoleSimulator);
         when(consoleSimulator.scanLibraryNumber()).thenReturn("123-4567");
         when(consoleSimulator.scanPassword()).thenReturn("abcde");
 
         library.checkout(new Book("Pride and Prejudice", "Jane Austen", 1813));
+
+        verify(consoleSimulator, times(1)).display("Invalid credentials");
+    }
+
+    @Test
+    public void testShouldNotifyOnUnsuccessfulLoginWhileReturningABook() {
+        ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
+        Library library = new Library(consoleSimulator);
+        when(consoleSimulator.scanLibraryNumber()).thenReturn("123-4567");
+        when(consoleSimulator.scanPassword()).thenReturn("abcde");
+
+        library.returnBook(new Book("Pride and Prejudice", "Jane Austen", 1813));
 
         verify(consoleSimulator, times(1)).display("Invalid credentials");
     }

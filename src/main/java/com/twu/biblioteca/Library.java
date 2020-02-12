@@ -62,7 +62,8 @@ public class Library {
                 bookList.add(book);
                 consoleSimulator.display("Thank you for returning the book");
             }
-        }
+        } else
+            consoleSimulator.display("Invalid credentials");
     }
 
     private boolean isInLibrary(Book book) {
