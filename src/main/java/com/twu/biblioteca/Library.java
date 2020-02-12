@@ -64,6 +64,9 @@ public class Library {
                 issuanceRegister.remove(book, user);
                 consoleSimulator.display("Thank you for returning the book");
             }
+            else{
+                consoleSimulator.display("That is not a valid book to return");
+            }
         } else
             consoleSimulator.display("Invalid credentials");
     }
@@ -77,10 +80,6 @@ public class Library {
     }
 
     private boolean isBelongingToLibrary(Book book) {
-        if (!inventory.isInInventory(book)) {
-            consoleSimulator.display("That is not a valid book to return");
-            return false;
-        }
-        return true;
+        return inventory.isInInventory(book);
     }
 }
