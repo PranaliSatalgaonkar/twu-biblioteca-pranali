@@ -14,4 +14,8 @@ public class Accounts {
                 new User("158-0106", "password"),
                 new User("787-5008", "xyz123")));
     }
+
+    public boolean validate(User user) {
+        return true;
+    }
 }
