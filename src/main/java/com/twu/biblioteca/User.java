@@ -1,6 +1,5 @@
 package com.twu.biblioteca;
 
-import java.math.BigInteger;
 import java.util.Objects;
 
 public class User {

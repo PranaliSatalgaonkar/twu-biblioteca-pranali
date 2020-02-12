@@ -37,6 +37,18 @@ public class Menu {
             case 5:
                 library.checkout(getMovieDetails());
                 break;
+            case 6:
+                Authenticator authenticator = new Authenticator();
+                User currentUser = null;
+                consoleSimulator.display("Enter library number : ");
+                String libraryNumber = consoleSimulator.scanLibraryNumber();
+                consoleSimulator.display("Enter password : ");
+                String password = consoleSimulator.scanPassword();
+                if(authenticator.login(libraryNumber, password)){
+                    currentUser = authenticator.retrieveCurrentUser(libraryNumber, password);
+                }
+                consoleSimulator.display(currentUser.getUserInformation());
+                break;
             case 7:
                 return;
 //                System.exit(1); //todo: system.exit0

@@ -16,10 +16,18 @@ public class Authenticator {
     }
 
     public boolean login(String libraryNumber, String password) {
-        for(User registeredUser : registeredUsersList){
-            if(registeredUser.getLibraryNumber().equals(libraryNumber) && registeredUser.getPassword().equals(password))
+        for (User registeredUser : registeredUsersList) {
+            if (registeredUser.getLibraryNumber().equals(libraryNumber) && registeredUser.getPassword().equals(password))
                 return true;
         }
         return false;
+    }
+
+    public User retrieveCurrentUser(String libraryNumber, String password){
+        for (User registeredUser : registeredUsersList) {
+            if (registeredUser.getLibraryNumber().equals(libraryNumber) && registeredUser.getPassword().equals(password))
+                return registeredUser;
+        }
+        return null;
     }
 }
