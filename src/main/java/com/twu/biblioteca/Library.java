@@ -43,7 +43,8 @@ public class Library {
                 consoleSimulator.display("Thank you! Enjoy the book");
             } else
                 consoleSimulator.display("Sorry, that book is not available");
-        }
+        } else
+            consoleSimulator.display("Invalid credentials");
     }
 
     public void checkout(Movie movie) {

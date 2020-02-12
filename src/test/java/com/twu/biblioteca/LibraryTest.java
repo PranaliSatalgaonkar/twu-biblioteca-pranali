@@ -123,4 +123,16 @@ class LibraryTest {
 
         verify(consoleSimulator, times(1)).display("Sorry, that movie is not available");
     }
+
+    @Test
+    public void testShouldNotifyOnUnsuccessfulLogin() {
+        ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
+        Library library = new Library(consoleSimulator);
+        when(consoleSimulator.scanLibraryNumber()).thenReturn("123-4567");
+        when(consoleSimulator.scanPassword()).thenReturn("abcde");
+
+        library.checkout(new Book("Pride and Prejudice", "Jane Austen", 1813));
+
+        verify(consoleSimulator, times(1)).display("Invalid credentials");
+    }
 }
