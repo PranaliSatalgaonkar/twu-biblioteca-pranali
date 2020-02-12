@@ -1,14 +1,21 @@
 package com.twu.biblioteca;
 
+import java.math.BigInteger;
 import java.util.Objects;
 
 public class User {
     private String libraryNumber;
     private String password;
+    private final String name;
+    private final String email;
+    private final String phoneNumber;
 
-    public User(String libraryNumber, String password) {
+    public User(String libraryNumber, String password, String name, String email, String phoneNumber) {
         this.libraryNumber = libraryNumber;
         this.password = password;
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getLibraryNumber() {

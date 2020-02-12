@@ -14,7 +14,7 @@ class AuthenticatorTest {
     }
 
     @Test
-    public void testShouldReturnFalseIfUserDoesnotExist() {
+    public void testShouldReturnFalseIfUserDoesNotExist() {
         Authenticator authenticator = new Authenticator();
 
         assertFalse(authenticator.login("123-4567", "abce"));
