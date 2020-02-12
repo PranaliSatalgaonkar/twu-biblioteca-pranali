@@ -32,6 +32,11 @@ public class ConsoleSimulator {
     public String scanPassword() {
         return scanner.next();
     }
+
+    public String scanMovieName() {
+        return scanner.nextLine();
+    }
+
     public void display(String message) {
         System.out.println(message);
     }

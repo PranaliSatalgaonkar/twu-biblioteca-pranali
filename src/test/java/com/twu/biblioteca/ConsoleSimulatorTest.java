@@ -71,6 +71,16 @@ class ConsoleSimulatorTest {
     }
 
     @Test
+    public void testShouldReturnScannedMovieName() {
+        String input = "Parasite";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        ConsoleSimulator consoleSimulator = new ConsoleSimulator();
+        String movieName = consoleSimulator.scanMovieName();
+        assertEquals("Parasite", movieName);
+        System.setIn(System.in);
+    }
+
+    @Test
     public void testShouldDisplayMessage() {
         final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
