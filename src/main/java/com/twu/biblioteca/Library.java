@@ -7,7 +7,7 @@ public class Library {
     private List<Movie> movieList;
     private Inventory inventory;
     private ConsoleSimulator consoleSimulator;
-    private Map<Book, User> issuanceRegister;
+    private Map<Book, String> issuanceRegister;
 
     public Library(ConsoleSimulator consoleSimulator) {
         this.consoleSimulator = consoleSimulator;
@@ -40,7 +40,7 @@ public class Library {
         if (new Authenticator().login(user)) {
             if (isInLibrary(book)) {
                 bookList.remove(book);
-                issuanceRegister.put(book, user);
+                issuanceRegister.put(book, user.getLibraryNumber());
                 consoleSimulator.display("Thank you! Enjoy the book");
             } else
                 consoleSimulator.display("Sorry, that book is not available");
@@ -61,7 +61,7 @@ public class Library {
         if (new Authenticator().login(user)) {
             if (isBelongingToLibrary(book)) {
                 bookList.add(book);
-                issuanceRegister.remove(book, user);
+                issuanceRegister.remove(book, user.getLibraryNumber());
                 consoleSimulator.display("Thank you for returning the book");
             } else {
                 consoleSimulator.display("That is not a valid book to return");
