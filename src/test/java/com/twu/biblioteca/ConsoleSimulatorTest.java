@@ -91,6 +91,26 @@ class ConsoleSimulatorTest {
     }
 
     @Test
+    public void testShouldReturnScannedMovieDirector() {
+        String input = "Bong Joon-ho";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        ConsoleSimulator consoleSimulator = new ConsoleSimulator();
+        String movieDirector = consoleSimulator.scanMovieDirector();
+        assertEquals("Bong Joon-ho", movieDirector);
+        System.setIn(System.in);
+    }
+
+    @Test
+    public void testShouldReturnScannedMovieRating() {
+        String input = "10";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        ConsoleSimulator consoleSimulator = new ConsoleSimulator();
+        int movieRating = consoleSimulator.scanMovieRating();
+        assertEquals(10, movieRating);
+        System.setIn(System.in);
+    }
+
+    @Test
     public void testShouldDisplayMessage() {
         final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));

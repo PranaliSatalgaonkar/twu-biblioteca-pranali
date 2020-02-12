@@ -41,6 +41,14 @@ public class ConsoleSimulator {
         return scanner.nextInt();
     }
 
+    public String scanMovieDirector() {
+        return scanner.nextLine();
+    }
+
+    public int scanMovieRating() {
+        return scanner.nextInt();
+    }
+
     public void display(String message) {
         System.out.println(message);
     }
