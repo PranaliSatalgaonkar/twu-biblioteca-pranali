@@ -1,14 +1,13 @@
 package com.twu.biblioteca;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Library {
     protected List<Book> bookList;
     private List<Movie> movieList;
     private Inventory inventory;
     private ConsoleSimulator consoleSimulator;
+    private Map<Book, User> issuanceRegister;
 
     public Library(ConsoleSimulator consoleSimulator) {
         this.consoleSimulator = consoleSimulator;
@@ -23,6 +22,7 @@ public class Library {
                 new Movie("Booksmart", 2019, "Olivia Wilde", "7"),
                 new Movie("The Farewell", 2019, "Lulu Wang", "8"),
                 new Movie("Knives Out", 2019, "Rian Johnson", "unrated")));
+        issuanceRegister = new HashMap<>();
     }
 
     public void displayBookList() {
@@ -40,6 +40,7 @@ public class Library {
         if (new Authenticator().login(user)) {
             if (isInLibrary(book)) {
                 bookList.remove(book);
+                issuanceRegister.put(book, user);
                 consoleSimulator.display("Thank you! Enjoy the book");
             } else
                 consoleSimulator.display("Sorry, that book is not available");
@@ -60,6 +61,7 @@ public class Library {
         if (new Authenticator().login(user)) {
             if (isBelongingToLibrary(book)) {
                 bookList.add(book);
+                issuanceRegister.remove(book, user);
                 consoleSimulator.display("Thank you for returning the book");
             }
         } else
