@@ -63,8 +63,7 @@ public class Library {
                 bookList.add(book);
                 issuanceRegister.remove(book, user);
                 consoleSimulator.display("Thank you for returning the book");
-            }
-            else{
+            } else {
                 consoleSimulator.display("That is not a valid book to return");
             }
         } else

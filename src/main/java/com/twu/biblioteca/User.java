@@ -15,10 +15,6 @@ public class User {
         return libraryNumber;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

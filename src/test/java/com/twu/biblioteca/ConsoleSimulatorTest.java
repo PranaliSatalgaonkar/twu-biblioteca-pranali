@@ -12,7 +12,7 @@ class ConsoleSimulatorTest {
 
     @Test
     public void testShouldReturnScannedOption() {
-        String input = "2" ;
+        String input = "2";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
         ConsoleSimulator consoleSimulator = new ConsoleSimulator();
         int option = consoleSimulator.scanOption();
@@ -22,7 +22,7 @@ class ConsoleSimulatorTest {
 
     @Test
     public void testShouldReturnScannedString() {
-        String input = "user input string" ;
+        String input = "user input string";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
         ConsoleSimulator consoleSimulator = new ConsoleSimulator();
         String title = consoleSimulator.scanBookTitle();

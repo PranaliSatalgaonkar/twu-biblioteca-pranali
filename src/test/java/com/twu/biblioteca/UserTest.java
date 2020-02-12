@@ -19,5 +19,4 @@ class UserTest {
 
         assertEquals("pqrs", user.getPassword());
     }
-
 }
