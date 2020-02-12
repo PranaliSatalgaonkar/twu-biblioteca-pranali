@@ -4,21 +4,21 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class AccountsTest {
+class AuthenticatorTest {
 
     @Test
     public void testShouldValidateLibraryNumberAndPassword() {
-        Accounts accounts = new Accounts();
+        Authenticator authenticator = new Authenticator();
         User user = new User("123-4567", "abcd");
 
-        assertTrue(accounts.validate(user));
+        assertTrue(authenticator.login(user));
     }
 
     @Test
     public void testShouldReturnFalseIfUserDoesnotExist() {
-        Accounts accounts = new Accounts();
+        Authenticator authenticator = new Authenticator();
         User user = new User("123-4567", "abce");
 
-        assertFalse(accounts.validate(user));
+        assertFalse(authenticator.login(user));
     }
 }
