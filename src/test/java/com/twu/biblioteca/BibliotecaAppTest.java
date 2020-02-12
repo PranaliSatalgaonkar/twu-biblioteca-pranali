@@ -12,7 +12,7 @@ public class BibliotecaAppTest {
         String menu = "\nMENU:\n\n1. Display books in library.\n2. Checkout Book.\n3. Return Book.\n4. Display movies in library\n5. Checkout Movie\n6. View my details\n7. Quit Application.\n\nEnter your choice : ";
 
         ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
-        doReturn(4).when(consoleSimulator).scanOption();
+        doReturn(7).when(consoleSimulator).scanOption();
 
         new BibliotecaApp(consoleSimulator).start(new Menu(new Library(consoleSimulator), consoleSimulator));
 

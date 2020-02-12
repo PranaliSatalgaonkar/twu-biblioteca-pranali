@@ -14,7 +14,7 @@ public class Menu {
         while (true) {
             consoleSimulator.display("\nMENU:\n\n1. Display books in library.\n2. Checkout Book.\n3. Return Book.\n4. Display movies in library\n5. Checkout Movie\n6. View my details\n7. Quit Application.\n\nEnter your choice : ");
             int option = consoleSimulator.scanOption();
-            if (option == 4)
+            if (option == 7)
                 break;
             performAction(option);
         }
@@ -31,7 +31,7 @@ public class Menu {
             case 3:
                 library.returnBook(getBookDetails());
                 break;
-            case 4:
+            case 7:
                 return;
 //                System.exit(1); //todo: system.exit0
             default:
