@@ -31,6 +31,9 @@ public class Menu {
             case 3:
                 library.returnBook(getBookDetails());
                 break;
+            case 4:
+                library.displayMovieList();
+                break;
             case 7:
                 return;
 //                System.exit(1); //todo: system.exit0
