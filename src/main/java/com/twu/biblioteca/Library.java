@@ -36,11 +36,14 @@ public class Library {
     }
 
     public void checkout(Book book) {
-        if (isInLibrary(book)) {
-            bookList.remove(book);
-            consoleSimulator.display("Thank you! Enjoy the book");
-        } else
-            consoleSimulator.display("Sorry, that book is not available");
+        User user = new User(consoleSimulator.scanLibraryNumber(), consoleSimulator.scanPassword());
+        if (new Authenticator().login(user)) {
+            if (isInLibrary(book)) {
+                bookList.remove(book);
+                consoleSimulator.display("Thank you! Enjoy the book");
+            } else
+                consoleSimulator.display("Sorry, that book is not available");
+        }
     }
 
     public void checkout(Movie movie) {

@@ -22,9 +22,11 @@ class LibraryTest {
     }
 
     @Test
-    public void testShouldCheckoutABook() {
+    public void testShouldCheckoutABookOnlyIfUserIsLoggedIn() {
         ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
         Library library = new Library(consoleSimulator);
+        when(consoleSimulator.scanLibraryNumber()).thenReturn("123-4567");
+        when(consoleSimulator.scanPassword()).thenReturn("abcd");
 
         library.checkout(new Book("Pride and Prejudice", "Jane Austen", 1813));
         library.checkout(new Book("Pride and Prejudice", "Jane Austen", 1813));
@@ -37,6 +39,8 @@ class LibraryTest {
     public void testShouldNotifyOnSuccessfulCheckout() {
         ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
         Library library = new Library(consoleSimulator);
+        when(consoleSimulator.scanLibraryNumber()).thenReturn("123-4567");
+        when(consoleSimulator.scanPassword()).thenReturn("abcd");
 
         library.checkout(new Book("The Diary of a Young Girl", "Anne Frank", 1947));
 
@@ -47,6 +51,9 @@ class LibraryTest {
     public void testShouldNotifyOnUnsuccessfulCheckout() {
         ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
         Library library = new Library(consoleSimulator);
+        when(consoleSimulator.scanLibraryNumber()).thenReturn("123-4567");
+        when(consoleSimulator.scanPassword()).thenReturn("abcd");
+
         library.checkout(new Book("The Secret Seven", "Enid Blyton", 1949));
 
         verify(consoleSimulator, times(1)).display("Sorry, that book is not available");

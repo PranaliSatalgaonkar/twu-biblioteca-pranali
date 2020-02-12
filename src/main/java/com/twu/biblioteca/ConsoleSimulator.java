@@ -28,4 +28,12 @@ public class ConsoleSimulator {
     public void display(String message) {
         System.out.println(message);
     }
+
+    public String scanLibraryNumber() {
+        return scanner.next();
+    }
+
+    public String scanPassword() {
+        return scanner.next();
+    }
 }
