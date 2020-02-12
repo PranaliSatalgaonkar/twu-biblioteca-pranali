@@ -13,4 +13,12 @@ class AccountsTest {
 
         assertTrue(accounts.validate(user));
     }
+
+    @Test
+    public void testShouldReturnFalseIfUserDoesnotExist() {
+        Accounts accounts = new Accounts();
+        User user = new User("123-4567", "abce");
+
+        assertFalse(accounts.validate(user));
+    }
 }
