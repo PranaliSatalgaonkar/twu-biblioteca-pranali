@@ -15,9 +15,9 @@ public class Authenticator {
                 new User("787-5008", "xyz123")));
     }
 
-    public boolean login(User user) {
+    public boolean login(String libraryNumber, String password) {
         for(User registeredUser : registeredUsersList){
-            if(registeredUser.getLibraryNumber().equals(user.getLibraryNumber()) && registeredUser.getPassword().equals(user.getPassword()))
+            if(registeredUser.getLibraryNumber().equals(libraryNumber) && registeredUser.getPassword().equals(password))
                 return true;
         }
         return false;

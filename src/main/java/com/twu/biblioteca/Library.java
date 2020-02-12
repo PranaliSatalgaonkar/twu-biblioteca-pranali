@@ -36,11 +36,12 @@ public class Library {
     }
 
     public void checkout(Book book) {
-        User user = new User(consoleSimulator.scanLibraryNumber(), consoleSimulator.scanPassword());
-        if (new Authenticator().login(user)) {
+        String libraryNumber = consoleSimulator.scanLibraryNumber();
+        String password = consoleSimulator.scanPassword();
+        if (new Authenticator().login(libraryNumber, password)) {
             if (isInLibrary(book)) {
                 bookList.remove(book);
-                issuanceRegister.put(book, user.getLibraryNumber());
+                issuanceRegister.put(book, libraryNumber);
                 consoleSimulator.display("Thank you! Enjoy the book");
             } else
                 consoleSimulator.display("Sorry, that book is not available");
@@ -57,11 +58,12 @@ public class Library {
     }
 
     public void returnBook(Book book) {
-        User user = new User(consoleSimulator.scanLibraryNumber(), consoleSimulator.scanPassword());
-        if (new Authenticator().login(user)) {
+        String libraryNumber = consoleSimulator.scanLibraryNumber();
+        String password = consoleSimulator.scanPassword();
+        if (new Authenticator().login(libraryNumber, password)) {
             if (isBelongingToLibrary(book)) {
                 bookList.add(book);
-                issuanceRegister.remove(book, user.getLibraryNumber());
+                issuanceRegister.remove(book, libraryNumber);
                 consoleSimulator.display("Thank you for returning the book");
             } else {
                 consoleSimulator.display("That is not a valid book to return");

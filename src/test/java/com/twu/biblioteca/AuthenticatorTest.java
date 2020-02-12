@@ -9,16 +9,14 @@ class AuthenticatorTest {
     @Test
     public void testShouldValidateLibraryNumberAndPassword() {
         Authenticator authenticator = new Authenticator();
-        User user = new User("123-4567", "abcd");
 
-        assertTrue(authenticator.login(user));
+        assertTrue(authenticator.login("123-4567", "abcd"));
     }
 
     @Test
     public void testShouldReturnFalseIfUserDoesnotExist() {
         Authenticator authenticator = new Authenticator();
-        User user = new User("123-4567", "abce");
 
-        assertFalse(authenticator.login(user));
+        assertFalse(authenticator.login("123-4567", "abce"));
     }
 }
