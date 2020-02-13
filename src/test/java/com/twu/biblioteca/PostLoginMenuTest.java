@@ -13,11 +13,11 @@ class PostLoginMenuTest {
         ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
         User user = mock(User.class);
         PostLoginMenu postLoginMenu = new PostLoginMenu(library, consoleSimulator, user);
-        when(consoleSimulator.scanOption()).thenReturn(1, 2);
+        when(consoleSimulator.scanOption()).thenReturn(5);
 
         postLoginMenu.displayPostLoginMenu();
 
-        verify(library, times(1)).checkout((Book) null);
+        verify(consoleSimulator, times(1)).display("\nMENU:\n\n1. Checkout book.\n2. Return book.\n3. Checkout movie\n4. View my details.\n5. Go back.\n\nEnter your choice : ");
     }
 
     @Test
