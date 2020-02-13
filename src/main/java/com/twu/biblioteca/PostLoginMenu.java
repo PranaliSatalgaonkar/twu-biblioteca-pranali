@@ -26,6 +26,8 @@ public class PostLoginMenu {
             case 1:
                 library.checkout((Book) null);
                 break;
+            default:
+                consoleSimulator.display("Please select a valid option!");
         }
     }
 }

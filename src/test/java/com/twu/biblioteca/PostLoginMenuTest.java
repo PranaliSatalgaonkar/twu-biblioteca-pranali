@@ -20,4 +20,17 @@ class PostLoginMenuTest {
         verify(library, times(1)).checkout((Book) null);
     }
 
+    @Test
+    public void testShouldNotifyOnChoosingInvalidOption() {
+        Library library = mock(Library.class);
+        ConsoleSimulator consoleSimulator = mock(ConsoleSimulator.class);
+        User user = mock(User.class);
+        PostLoginMenu postLoginMenu = new PostLoginMenu(library, consoleSimulator, user);
+        when(consoleSimulator.scanOption()).thenReturn(10);
+
+        postLoginMenu.performPostLoginAction(consoleSimulator.scanOption());
+
+        verify(consoleSimulator, times(1)).display("Please select a valid option!");
+
+    }
 }
