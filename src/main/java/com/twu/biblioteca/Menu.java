@@ -29,16 +29,15 @@ public class Menu {
                 break;
             case 3:
                 Authenticator authenticator = new Authenticator();
-                User currentUser = null;
+                User currentUser;
                 consoleSimulator.display("Enter library number : ");
                 String libraryNumber = consoleSimulator.scanLibraryNumber();
                 consoleSimulator.display("Enter password : ");
                 String password = consoleSimulator.scanPassword();
                 if (authenticator.login(libraryNumber, password)) {
                     currentUser = authenticator.retrieveCurrentUser(libraryNumber, password);
+                    new PostLoginMenu(library, consoleSimulator, currentUser).displayPostLoginMenu();
                 }
-                assert currentUser!=null;
-                consoleSimulator.display(currentUser.getUserInformation());
                 break;
             case 4:
                 return;
